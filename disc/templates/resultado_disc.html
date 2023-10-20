@@ -1,0 +1,33 @@
+<!-- Em disc/templates/resultado_disc.html -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados DISC</title>
+</head>
+<body>
+    
+    <h1>Seus Resultados</h1>
+    
+    <h2>Médias por perfil</h2>
+    <ul>
+        <li>Dominante: {{ object.dominante }}</li>
+        <li>Influente: {{ object.influente }}</li>
+        <li>Estabilidade: {{ object.estabilidade }}</li>
+        <li>Conformado: {{ object.conformado }}</li>
+    </ul>
+    
+    <h2>Seu perfil mais alto: {{ perfil_mais_alto }}</h2>
+
+    <h3>Descrição</h3>
+    <p>{{ descricao_perfil }}</p>
+    
+    <h3>Locais de trabalho ideais</h3>
+    <p>{{ locais_trabalho }}</p>
+    
+    <!-- Adicione outras informações conforme necessário -->
+    
+</body>
+</html>
