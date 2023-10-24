@@ -1,0 +1,19 @@
+<!-- FILEPATH: /c:/Users/gonca/Desktop/Danielle/TCC/TCC_oficial/disc_assessment/user_auth/templates/cadastro.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro</h1>
+    {% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <h2>Registrar</h2>
+        {{ form.as_p }}
+        <button type="submit">Cadastrar</button>
+    </form>
+    {% endblock %}
+</body>
+</html>
