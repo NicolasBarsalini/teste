@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #allauth para autenticação
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    #fim allauth, pode no futuro inserir outras formas de login, so oljar a documentação do allauth
     'disc',
     'core',
     'user_auth'
@@ -50,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
+
 ]
 
 ROOT_URLCONF = 'assessment_disc_project.urls'
@@ -90,6 +97,14 @@ AUTHENTICATION_BACKENDS = [
 """
 # Configuração do modelo de usuário customizado - OPCIONAL
 #AUTH_USER_MODEL = 'user_auth.CustomUser'  # Substitua 'user_auth' pelo nome do seu app onde o CustomUser foi definido
+AUTH_USER_MODEL = 'user_auth.CustomUser' #modo para colocar o allauth
+LOGIN_REDIRECT_URL = 'user_auth:perfil'  # Ajuste o namespace e o nome da view conforme o definido no seu urls.py
+ #para onde o usuario vai ser redirecionado depois de logar
+
+ACCOUNT_FORMS = {
+    'signup': 'user_auth.forms.CustomAllauthSignupForm',
+} #para usar o allauth, modelo dentro do user_auth/forms.py
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

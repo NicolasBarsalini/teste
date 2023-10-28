@@ -23,6 +23,7 @@ urlpatterns = [
     path('disc/', include('disc.urls', namespace='disc')),  # URLs do app 'disc'
     path('', include('core.urls', namespace= 'core')), # URLs do app 'core' para a página inicial
     path('auth/', include('user_auth.urls', namespace='user_auth')), # URLs do app 'auth' para autenticação
+    path('accounts/', include('allauth.urls')),
     # Adicione includes para outros apps conforme necessário.
 ]
 
