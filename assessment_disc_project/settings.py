@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'disc',
     'core',
+    'user_auth'
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+"""
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend', # padrão
+    'user_auth.backends.CustomUserAuthBackend', # personalizado
+]
+"""
+# Configuração do modelo de usuário customizado - OPCIONAL
+#AUTH_USER_MODEL = 'user_auth.CustomUser'  # Substitua 'user_auth' pelo nome do seu app onde o CustomUser foi definido
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -107,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
