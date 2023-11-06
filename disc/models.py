@@ -35,3 +35,4 @@ class ResultadoDISC(models.Model):
             'c': self.conformado
         }
         return max(valores, key=valores.get)
+

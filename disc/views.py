@@ -6,7 +6,7 @@ from .forms import QuestionnaireForm
 from django.views.generic import DetailView
 
 
-def form_valid(self, form):
+"""def form_valid(self, form):
     # Dicionário para armazenar as pontuações
     pontuacoes = {'d': 0, 'i': 0, 's': 0, 'c': 0}
     contagem = {'d': 0, 'i': 0, 's': 0, 'c': 0}
@@ -16,7 +16,7 @@ def form_valid(self, form):
         pergunta_id = int(name.split('_')[1])
         pergunta = Pergunta.objects.get(pk=pergunta_id)
         pontuacoes[pergunta.perfil] += int(value)
-        contagem[pergunta.perfil] += 1
+        contagem[pergunta.perfil] += 1"""
     
 # Calculando a média
 class QuestionnaireView(FormView): #antigo PerguntaView
@@ -47,9 +47,14 @@ class QuestionnaireView(FormView): #antigo PerguntaView
                 conformado=medias['c']
             )
             resultado.save()
+            
+        # Associa o resultado DISC ao usuário se ele estiver logado
+            if self.request.user.is_authenticated:
+                self.request.user.resultado_disc = resultado
+                self.request.user.save()
 
             # Redirecionando para a página de resultados com o ID do resultado
-            self.success_url = reverse_lazy('disc:resultado', kwargs={'pk': resultado.id})
+                self.success_url = reverse_lazy('disc:resultado', kwargs={'pk': resultado.id})
 
             return super(QuestionnaireView, self).form_valid(form)
 

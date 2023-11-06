@@ -1,51 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assessment de Perfil Comportamental</title>
-    <!-- Importação do Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-4">
-    <header>
-        <h1>Assessment de Perfil Comportamental</h1>
-        <p>Baseado no modelo DISC</p>
-    </header>
-    </div>
+{% extends 'base.html' %}
 
+{% block title %}
+    Assessment de Perfil Comportamental
+{% endblock %}
+
+{% block header %}
+    Assessment de Perfil Comportamental
+{% endblock %}
+
+{% block header_description %}
+    Baseado no modelo DISC
+{% endblock %}
+
+{% block content %}
     <div class="container">
-    <main class="mt-4">
-        <section>
+        <section class="my-5">
             <h2>O que é o Modelo DISC?</h2>
             <p>Uma breve explicação sobre o modelo DISC e como ele é usado para avaliar perfis comportamentais.</p>
         </section>
 
-        <section>
+        <section class="my-5">
             <h2>Realize o Assessment</h2>
             <p>Faça o seu cadastro e logo depois preencha o questionário para descobrir seu perfil comportamental de acordo com o modelo DISC.</p>
             <a href="{% url 'account_signup' %}" class="btn btn-primary mt-4">Iniciar o Assessment</a>
-
-            <!-- Nova URL para login com Allauth -->
             <a href="{% url 'account_login' %}" class="btn btn-secondary mt-4">Já tenho cadastro</a>
-
-
-
-
         </section>
-    </main>
     </div>
-    <br>
-    
+{% endblock %}
 
-<div class="container">
-    <footer>
-        <p>&copy; 2023 Assessment de Perfil Comportamental</p>
-    </footer>
-</div>
-
-    <!-- Importação do Bootstrap JS (opcional, se você quiser usar os componentes interativos do Bootstrap) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% block footer %}
+    <div class="container text-center py-4">
+        &copy; 2023 Assessment de Perfil Comportamental
+    </div>
+{% endblock %}

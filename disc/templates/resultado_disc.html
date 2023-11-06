@@ -1,14 +1,10 @@
-<!-- Em disc/templates/resultado_disc.html -->
+<!-- FILEPATH: /c:/Users/gonca/Desktop/Danielle/TCC/TCC_oficial/disc_assessment/disc/templates/resultado_disc.html -->
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados DISC</title>
-</head>
-<body>
-    
+{% extends 'base.html' %}
+
+{% block title %}Resultados DISC{% endblock %}
+
+{% block content %}
     <h1>Seus Resultados</h1>
     
     <h2>Médias por perfil</h2>
@@ -27,7 +23,6 @@
     <h3>Locais de trabalho ideais</h3>
     <p>{{ locais_trabalho }}</p>
     
-    <!-- Adicione outras informações conforme necessário -->
-    
-</body>
-</html>
+    <!-- Link para voltar ao perfil do usuário -->
+    <a href="{% url 'user_auth:perfil' %}">Retornar ao Perfil</a>
+{% endblock %}

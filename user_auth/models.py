@@ -59,3 +59,5 @@ class CustomUser(AbstractUser): # Herda de AbstractUser #cadastra usuario
     # Outros campos personalizados
     
 
+    
+

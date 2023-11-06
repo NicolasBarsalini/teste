@@ -99,6 +99,8 @@ AUTHENTICATION_BACKENDS = [
 #AUTH_USER_MODEL = 'user_auth.CustomUser'  # Substitua 'user_auth' pelo nome do seu app onde o CustomUser foi definido
 AUTH_USER_MODEL = 'user_auth.CustomUser' #modo para colocar o allauth
 LOGIN_REDIRECT_URL = 'user_auth:perfil'  # Ajuste o namespace e o nome da view conforme o definido no seu urls.py
+ACCOUNT_EMAIL_VERIFICATION = 'none' #para não precisar confirmar o email
+
  #para onde o usuario vai ser redirecionado depois de logar
 
 ACCOUNT_FORMS = {
