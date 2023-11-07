@@ -1,0 +1,13 @@
+<!-- FILEPATH: /c:/Users/gonca/Desktop/Danielle/TCC/TCC_oficial/disc_assessment/templates/account/signup.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Cadastro</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Cadastrar</button>
+    </form>
+{% endblock %}
+

@@ -14,6 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+SITED_ID = 1 #para o allauth
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #crispy forms para deixar o form mais bonito
+    'crispy_forms',
+    
     #allauth para autenticação
     'allauth',
     'allauth.account',
@@ -64,7 +69,7 @@ ROOT_URLCONF = 'assessment_disc_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [BASE_DIR / 'templates','templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -148,3 +153,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
