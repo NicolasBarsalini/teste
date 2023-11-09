@@ -15,4 +15,5 @@ def contato(request):
 """
 def redirecionar_cadastro(request):
     return redirect(reverse_lazy('user_auth:cadastro'))  # Note o uso de 'user_auth:cadastro'
-"""    
+""" 
+   

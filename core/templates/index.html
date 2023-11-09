@@ -25,6 +25,75 @@
             <a href="{% url 'account_signup' %}" class="btn btn-primary mt-4">Iniciar o Assessment</a>
             <a href="{% url 'account_login' %}" class="btn btn-secondary mt-4">Já tenho cadastro</a>
         </section>
+
+        <section class="my-5">
+            <div class="grafico-container" style="max-width: 600px; margin: auto;">
+                <canvas id="graficoDisc"></canvas>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                function buscarDadosEAtualizarGrafico() {
+                    fetch('{% url "disc:estatisticas-disc" %}')
+                        .then(response => response.json())
+                        .then(dados => {
+                            const ctx = document.getElementById('graficoDisc').getContext('2d');
+                            if (window.graficoDisc && typeof window.graficoDisc.destroy === 'function') {
+                                window.graficoDisc.destroy(); // Destrua o gráfico antigo antes de desenhar um novo
+                            }
+                            window.graficoDisc = new Chart(ctx, {
+                                type: 'bar', // Tipo de gráfico
+                                data: {
+                                    labels: ['Dominante', 'Influente', 'Estabilidade', 'Conformado'],
+                                    datasets: [{
+                                        label: 'Indicador de perfil DISC por cores',
+                                        data: [dados.d, dados.i, dados.s, dados.c], // Dados para cada perfil
+                                        backgroundColor: [ // Cores de fundo para cada barra
+                                            'rgba(255, 0, 0, 1)', // Vermelho para Dominante
+                                            'rgba(255, 206, 86, 1)', // Amarelo para Influente
+                                            'rgba(0, 128, 0, 1)', // Verde para Estabilidade
+                                            'rgba(54, 162, 235, 1)' // Azul claro para Conformado
+                                        ],
+
+                                        borderColor: [ // Cores da borda para cada barra
+                                            'rgba(255, 0, 0, 1)', // Vermelho para Dominante
+                                            'rgba(255, 206, 86, 1)', // Amarelo para Influente
+                                            'rgba(0, 92, 15)', // Verde para Estabilidade
+                                            'rgba(152, 171, 235)' // Azul claro para Conformado
+                                        ],
+
+                                        borderWidth: 0.5 // Largura da borda das barras
+                                    }]
+                                },
+                                options: {
+                                    responsive: true, // Torna o gráfico responsivo
+                                    maintainAspectRatio: false, // Mantém o aspecto mesmo que mude o tamanho da tela
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true // A escala y começa em zero
+                                        }
+                                    },
+                                    plugins: {
+                                        title: {
+                                            display: true,
+                                            text: 'Número de Testes por Perfil'
+                                        }
+                                    }
+                                }
+                            });
+                        }).catch(error => {
+                            console.error('Erro ao buscar ou processar os dados:', error);
+                        });
+                }
+                
+                // Atualiza o gráfico a cada 15 segundos
+                setInterval(buscarDadosEAtualizarGrafico, 15000);
+                
+                // Chama a função imediatamente para carregar os dados ao abrir a página
+                buscarDadosEAtualizarGrafico();
+                
+            </script>
+        </section>
     </div>
 {% endblock %}
 

@@ -4,6 +4,7 @@ from django.views.generic.edit import FormView
 from disc.models import Pergunta, ResultadoDISC
 from .forms import QuestionnaireForm
 from django.views.generic import DetailView
+from django.http import JsonResponse
 
 
 """def form_valid(self, form):
@@ -96,3 +97,27 @@ class ResultadoView(DetailView):
         context['locais_trabalho'] = LOCAIS_TRABALHO[inicial_perfil_mais_alto]
     
         return context
+    
+
+def estatisticas_disc(request):
+    # Buscar todos os resultados dos testes DISC
+    resultados = ResultadoDISC.objects.all()
+
+    # Inicializar contadores para cada perfil
+    contagem_perfis = {'d': 0, 'i': 0, 's': 0, 'c': 0}
+
+    # Contar o perfil mais alto de cada resultado
+    for resultado in resultados:
+        perfil_mais_alto = resultado.perfil_mais_alto
+        contagem_perfis[perfil_mais_alto] += 1
+
+    # Criar a resposta JSON com a contagem dos perfis
+    resposta = {
+        'd': contagem_perfis['d'],
+        'i': contagem_perfis['i'],
+        's': contagem_perfis['s'],
+        'c': contagem_perfis['c']
+    }
+
+    return JsonResponse(resposta)
+

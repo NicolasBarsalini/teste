@@ -1,6 +1,0 @@
-Logica do sistema de login (em tabelas)
-
-Tanto o resultado disc e os dados pessoais do usuário devem ser uma chave estrangeira no aplicativo de autenticação. (allauth)
-
-apos fazer isso devo tirar os campos de username e password do meu customuser e deixar apenas os do allauth
-

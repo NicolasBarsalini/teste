@@ -1,41 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Perfil Usuário</title>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{% url 'core:index' %}">Home</a></li>
-                <li><a href="{% url 'core:sobre' %}">About</a></li>
-                <li><a href="{% url 'core:contato' %}">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- FILEPATH: /c:/Users/gonca/Desktop/Danielle/TCC/TCC_oficial/disc_assessment/user_auth/templates/perfil.html -->
 
-    <main>
-        {% if resultado_disc %}
-        <h1>Seu Perfil DISC</h1>
+{% extends 'base.html' %}
+
+{% block title %}Perfil Usuário{% endblock %}
+
+{% block content %}
+    <h1>Seu Perfil DISC</h1>
+    {% if resultado_disc %}
         <p>Dominante: {{ resultado_disc.dominante }}</p>
         <p>Influente: {{ resultado_disc.influente }}</p>
         <p>Estabilidade: {{ resultado_disc.estabilidade }}</p>
         <p>Conformado: {{ resultado_disc.conformado }}</p>
-        <a href="{% url 'disc:teste_disc' %}">Refazer o Teste DISC</a> <!-- Opção de refazer o teste-->
 
+        <h2>Seu perfil mais alto: {{ perfil_mais_alto }}</h2>
+
+        <h3>Descrição</h3>
+        <p>{{ descricao_perfil }}</p>
+        
+        <h3>Locais de trabalho ideais</h3>
+        <p>{{ locais_trabalho }}</p>
+        
+        <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary">Refazer o Teste DISC</a>
     {% else %}
-        <h1>Você ainda não fez o teste DISC</h1>
-        <a href="{% url 'disc:teste_disc' %}">Fazer o Teste DISC</a> <!-- Nome da URL para a view do questionário -->
-
+        <h2>Você ainda não fez o teste DISC</h2>
+        <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary">Fazer o Teste DISC</a>
     {% endif %}
-    
-    </main>
-
     <a href="{% url 'user_auth:logout' %}" class="btn btn-danger">Deslogar</a>
-
-
-    <footer>
-        <p>&copy; 2021 My Site</p>
-    </footer>
-</body>
-</html>
+{% endblock %}
