@@ -1,33 +1,59 @@
 <!-- FILEPATH: /c:/Users/gonca/Desktop/Danielle/TCC/TCC_oficial/disc_assessment/disc/templates/base.html -->
+{% load static %}
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Teste DISC{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/favicon.ico' %}">
+    <!-- Custom CSS -->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet"> 
 </head>
-<body>
-    <header class="container my-4">
-        <nav class="navbar">
-            <ul class="nav">
-                <li class="nav-item"><a class="nav-link" href="{% url 'core:index' %}">Página Inicial</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'core:sobre' %}">Sobre</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'core:contato' %}">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="d-flex flex-column h-100">
 
-    <main class="container my-4">
-        {% block content %}
-        <!-- Conteúdo padrão que pode ser substituído -->
-        {% endblock %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href="{% url 'core:index' %}">Teste DISC</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'core:index' %}">Página Inicial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'core:sobre' %}">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'core:contato' %}">Contato</a></li>
+                    <!-- Adicione mais itens aqui se necessário -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="flex-shrink-0">
+        <div>
+            {% block content %}
+            <!-- The specific content of the page will be inserted here -->
+            {% endblock %}
+        </div>
     </main>
 
-    <footer class="container my-4 text-center">
-        <p>&copy; 2023 Assessment de Perfil Comportamental</p>
+    <!-- Footer -->
+    <footer class="footer mt-auto bg-dark text-white py-3">
+        <div class="container text-center">
+            <p>&copy; 2023 Teste DISC</p>
+        </div>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom scripts for DISC assessment -->
     {% block scripts %}
     {% endblock %}

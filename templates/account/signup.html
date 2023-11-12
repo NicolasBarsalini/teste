@@ -1,47 +1,96 @@
-<!-- FILEPATH: /c:/Users/gonca/Desktop/Danielle/TCC/TCC_oficial/disc_assessment/templates/account/signup.html -->
-
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Cadastro</h2>
-    <form method="post" class="signup-form">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="{{ form.first_name.id_for_label }}">Primeiro nome:</label>
-            {{ form.first_name }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.last_name.id_for_label }}">Último nome:</label>
-            {{ form.last_name }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.email.id_for_label }}">E-mail:</label>
-            {{ form.email }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.password1.id_for_label }}">Senha:</label>
-            {{ form.password1 }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.password2.id_for_label }}">Confirme a senha:</label>
-            {{ form.password2 }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.telefone.id_for_label }}">Telefone:</label>
-            {{ form.telefone }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.profissao.id_for_label }}">Profissão:</label>
-            {{ form.profissao }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.data_nascimento.id_for_label }}">Data de nascimento:</label>
-            {{ form.data_nascimento }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.localizacao.id_for_label }}">Localização:</label>
-            {{ form.localizacao }}
-        </div>
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-    </form>
+    <body class="d-flex flex-column">
+        <main class="flex-shrink-0">
+            <!-- Cabeçalho -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="#">DISC</a>
+                </div>
+            </nav>
+
+            <!-- Formulário de Cadastro -->
+            <div class="container my-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header bg-dark text-white">
+                                <h2>Cadastro</h2>
+                            </div>
+                            <div class="card-body">
+                                <form method="post" class="signup-form">
+                                    {% csrf_token %}
+                                    <div class="mb-3 form-floating">
+                                        <input type="text" class="form-control" id="{{ form.username.id_for_label }}" placeholder="Nome de Usuário" name="{{ form.username.name }}" required>
+                                        <label for="{{ form.username.id_for_label }}">Nome de Usuário</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="text" class="form-control" id="{{ form.first_name.id_for_label }}" placeholder="Primeiro Nome" name="{{ form.first_name.name }}" required>
+                                        <label for="{{ form.first_name.id_for_label }}">Primeiro Nome</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="text" class="form-control" id="{{ form.last_name.id_for_label }}" placeholder="Último Nome" name="{{ form.last_name.name }}" required>
+                                        <label for="{{ form.last_name.id_for_label }}">Último Nome</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="email" class="form-control" id="{{ form.email.id_for_label }}" placeholder="E-mail" name="{{ form.email.name }}" required>
+                                        <label for="{{ form.email.id_for_label }}">E-mail</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="password" class="form-control" id="{{ form.password1.id_for_label }}" placeholder="Senha" name="{{ form.password1.name }}" required>
+                                        <label for="{{ form.password1.id_for_label }}">Senha</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="password" class="form-control" id="{{ form.password2.id_for_label }}" placeholder="Confirme a Senha" name="{{ form.password2.name }}" required>
+                                        <label for="{{ form.password2.id_for_label }}">Confirme a Senha</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="tel" class="form-control" id="{{ form.telefone.id_for_label }}" placeholder="Telefone" name="{{ form.telefone.name }}">
+                                        <label for="{{ form.telefone.id_for_label }}">Telefone</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="text" class="form-control" id="{{ form.profissao.id_for_label }}" placeholder="Profissão" name="{{ form.profissao.name }}">
+                                        <label for="{{ form.profissao.id_for_label }}">Profissão</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="date" class="form-control" id="{{ form.data_nascimento.id_for_label }}" placeholder="Data de Nascimento" name="{{ form.data_nascimento.name }}">
+                                        <label for="{{ form.data_nascimento.id_for_label }}">Data de Nascimento</label>
+                                    </div>
+                                    <div class="mb-3 form-floating">
+                                        <input type="text" class="form-control" id="{{ form.localizacao.id_for_label }}" placeholder="Localização" name="{{ form.localizacao.name }}">
+                                        <label for="{{ form.localizacao.id_for_label }}">Cidade/Estado</label>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto">
+                        <div class="small m-0 text-white">Copyright &copy; Seu Website 2023</div>
+                    </div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 {% endblock %}
