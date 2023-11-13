@@ -1,24 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}
-    Assessment de Perfil Comportamental
-{% endblock %}
-
 {% block content %}
     <!-- Garanta que o cabeçalho ocupe a largura total da tela -->
     <div class="bg-dark py-5">
         <div class=" px-5">
             <div class="row gx-5 align-items-center justify-content-center">
                 <!-- Conteúdo do Texto -->
-                <div class="col-lg-7">
+                <div class="col-lg-7 text-justify-content-around">
                     <div class="my-5 text-center text-lg-start">
                         <h1 class="display-5 fw-bolder text-white mb-2">O que é o Modelo DISC?</h1>
-                        <p class="lead fw-normal text-white-50 mb-4">Uma breve explicação sobre o modelo DISC e como ele é usado para avaliar perfis comportamentais.</p>
-                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-lg-start">
-                            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'account_signup' %}">Iniciar o Assessment</a>
-                            <a class="btn btn-outline-light btn-lg px-4" href="{% url 'account_login' %}">Já tenho cadastro</a>
-                        </div>
+                        <p class="lead fw-normal text-white-50 mb-4 "> O modelo DISC é baseado em quatro fatores: Dominância, Influência, Estabilidade e Conformidade. Cada fator representa um conjunto de traços de personalidade que podem ser avaliados para entender melhor o comportamento de um indivíduo em diferentes situações e, nesse caso, em diferentes situações dentro de uma empresa. </p>
                     </div>
                 </div>
                 <!-- Imagem com Fundo Correspondente -->
@@ -30,15 +22,156 @@
     </div>
 
     <!-- Seção de Recursos do Template Bootstrap -->
-    <!-- Conteúdo da seção de recursos removido para brevidade -->
 
-    <!-- Conteúdo Original do seu Site -->
     <div class="container my-4">
-        <section class="my-5">
-            <h2>Realize o Assessment</h2>
-            <p>Faça o seu cadastro e logo depois preencha o questionário para descobrir seu perfil comportamental de acordo com o modelo DISC.</p>
 
+        <!-- Features section-->
+        <section class="py-5" id="features">
+            <div class="container px-5 my-5">
+                <div class="row gx-5">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h2 class="fw-bolder mb-0">Descubra sua Personalidade com o Teste DISC</h2>
+                        <p class="lead">Faça o teste DISC agora mesmo e descubra onde você se encaixa</p>
+                        <a href="{% url 'account_signup' %}" class="btn btn-primary">Comece Agora</a>
+
+                        <p class="lead mt-3">Ou, caso já tenha uma conta:</p>
+
+                        <div class="col-12 mt-4">
+                            <a class="btn btn-outline-dark" href="{% url 'account_login' %}">Fazer Login</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row gx-5 row-cols-1 row-cols-md-2">
+                            <div class="col mb-5 h-100">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-emoji-laughing"></i></div>
+                                    <h2 class="h5">Conheça a Si Mesmo</h2>
+                                <p class="mb-0">Descubra seus pontos fortes e áreas de desenvolvimento com base no modelo DISC.</p>
+                                </div>
+                            <div class="col mb-5 h-100">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-bar-chart-steps"></i></div>
+                                <h2 class="h5">Melhore suas Relações</h2>
+                                <p class="mb-0">Saiba como se comunicar melhor com pessoas de diferentes perfis DISC.</p>
+                            </div>
+                            <div class="col mb-5 mb-md-0 h-100">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people"></i></div>
+                                <h2 class="h5">Trabalho em Equipe</h2>
+                                <p class="mb-0">Descubra como você se encaixa melhor em equipes e colabore de forma mais eficiente.</p>
+                            </div>
+                            <div class="col h-100">
+                                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-award"></i></div>
+                                <h2 class="h5">Crescimento Profissional</h2>
+                                <p class="mb-0">Use seu conhecimento DISC para avançar em sua carreira e atingir seus objetivos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <div class="py-5 bg-light">
+            <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-10 col-xl-7">
+                        <div class="text-center">
+                            <div class="fs-4 mb-4 fst-italic">"Conhece-te a Ti mesmo e conhecerás todo o universo e os deuses, porque se o que procuras não achares primeiro dentro de ti mesmo, não acharás em lugar algum".</div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <img class="rounded-circle me-3" src="{% static 'images/socrates.png' %}" alt="..." width="40" height="40" />
+                                <div class="fw-bold">
+                                    Sócrátes
+                                    <span class="fw-bold text-primary mx-1">/</span>
+                                    Filósofo Grego
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Novo Cartão -->
+    <div class="row">
+        <div class="col-lg-3 mb-4 mx-2">
+            <!--Perfil Dominante-->
+            <a href="" class="card h-100 shadow border-0 text-decoration-none text-dark">
+                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
+                <div class="card-body p-3">
+                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
+                    <h5 class="card-title mb-3 stretched-link">Novo Perfil DISC</h5>
+                    <p class="card-text mb-0">Descrição breve do novo perfil comportamental.</p>
+                </div>
+                <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
+                    <div class="d-flex align-items-end justify-content-between">
+                        <div class="small">
+                            <div class="fw-bold">Nome do Perfil</div>
+                            <div class="text-muted">Breve explicação ou data relevante</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Perfil Influente -->
+        <div class="col-lg-3 mb-4 mx-2">
+            <a href="" class="card h-100 shadow border-0 text-decoration-none text-dark">
+                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
+                <div class="card-body p-3">
+                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
+                    <h5 class="card-title mb-3 stretched-link">Perfil Influente</h5>
+                    <p class="card-text mb-0">Descrição breve do perfil comportamental Influente.</p>
+                </div>
+                <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
+                    <div class="d-flex align-items-end justify-content-between">
+                        <div class="small">
+                            <div class="fw-bold">Nome do Perfil</div>
+                            <div class="text-muted">Breve explicação ou data relevante</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Perfil Estabilidade -->
+        <div class="col-lg-3 mb-4 mx-2">
+            <a href="" class="card h-100 shadow border-0 text-decoration-none text-dark">
+                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
+                <div class="card-body p-3">
+                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
+                    <h5 class="card-title mb-3 stretched-link">Perfil Estabilidade</h5>
+                    <p class="card-text mb-0">Descrição breve do perfil comportamental Estabilidade.</p>
+                </div>
+                <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
+                    <div class="d-flex align-items-end justify-content-between">
+                        <div class="small">
+                            <div class="fw-bold">Nome do Perfil</div>
+                            <div class="text-muted">Breve explicação ou data relevante</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Perfil Conformado -->
+        <div class="col-lg-3 mb-4 mx-2">
+            <a href="" class="card h-100 shadow border-0 text-decoration-none text-dark">
+                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
+                <div class="card-body p-3">
+                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
+                    <h5 class="card-title mb-3 stretched-link">Perfil Conformado</h5>
+                    <p class="card-text mb-0">Descrição breve do perfil comportamental Conformado.</p>
+                </div>
+                <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
+                    <div class="d-flex align-items-end justify-content-between">
+                        <div class="small">
+                            <div class="fw-bold">Nome do Perfil</div>
+                            <div class="text-muted">Breve explicação ou data relevante</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+        <!-- Gráfico DISC-->
         <section class="my-5">
             <div class="grafico-container" style="max-width: 600px; margin: auto;">
                 <canvas id="graficoDisc"></canvas>

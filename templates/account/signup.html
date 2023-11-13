@@ -3,12 +3,6 @@
 {% block content %}
     <body class="d-flex flex-column">
         <main class="flex-shrink-0">
-            <!-- Cabeçalho -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="#">DISC</a>
-                </div>
-            </nav>
 
             <!-- Formulário de Cadastro -->
             <div class="container my-5">
@@ -19,6 +13,21 @@
                                 <h2>Cadastro</h2>
                             </div>
                             <div class="card-body">
+                            <!-- Mensagens de erro -->
+                                {% if form.errors %}
+                                    <div class="alert alert-danger" role="alert">
+                                        <strong>Por favor, corrija o(s) seguinte(s) erro(s):</strong>
+                                        {% for field in form %}
+                                            {% for error in field.errors %}
+                                                <p>{{ error }}</p>
+                                            {% endfor %}
+                                        {% endfor %}
+                                        {% for error in form.non_field_errors %}
+                                            <p>{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+
                                 <form method="post" class="signup-form">
                                     {% csrf_token %}
                                     <div class="mb-3 form-floating">
