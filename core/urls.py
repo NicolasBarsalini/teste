@@ -8,6 +8,9 @@ urlpatterns = [
     #criar path da pagina sobre e contato..html:
     path('sobre/', views.sobre, name='sobre'),
     path('contato/', views.contato, name='contato'),
-    #path('redirecionar_cadastro/', views.redirecionar_cadastro, name='redirecionar_cadastro'),
+    path('perfil_dominante/', views.perfil_dominante, name='perfil_dominante'),
+    path('perfil_influente/', views.perfil_influente, name='perfil_influente'),
+    path('perfil_estavel/', views.perfil_estavel, name='perfil_estavel'),
+    path('perfil_cauteloso/', views.perfil_cauteloso, name='perfil_cauteloso'),
 
 ]

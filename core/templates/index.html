@@ -23,7 +23,6 @@
 
     <!-- Seção de Recursos do Template Bootstrap -->
 
-    <div class="container my-4">
 
         <!-- Features section-->
         <section class="py-5" id="features">
@@ -88,88 +87,104 @@
             </div>
         </div>
 
-    <!-- Novo Cartão -->
+<!-- Novo Cartão -->
+
+<div class="container px-4"> <!-- Adiciona padding horizontal de 4 unidades -->
     <div class="row">
-        <div class="col-lg-3 mb-4 mx-2">
-            <!--Perfil Dominante-->
-            <a href="" class="card h-100 shadow border-0 text-decoration-none text-dark">
-                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
-                <div class="card-body p-3">
-                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
-                    <h5 class="card-title mb-3 stretched-link">Novo Perfil DISC</h5>
-                    <p class="card-text mb-0">Descrição breve do novo perfil comportamental.</p>
+        <div class="row gx-5 justify-content-center mt-5">
+            <div class="col-lg-8 col-xl-6">
+                <div class="text-center">
+                    <h2 class="fw-bolder">Perfis Comportamentais DISC</h2>
+                    <p class="lead fw-normal text-muted mb-5">Explore os diferentes perfis comportamentais DISC e entenda suas características distintas. Clique nos cards abaixo para saber mais sobre cada perfil.</p>
                 </div>
-                <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
-                    <div class="d-flex align-items-end justify-content-between">
-                        <div class="small">
-                            <div class="fw-bold">Nome do Perfil</div>
-                            <div class="text-muted">Breve explicação ou data relevante</div>
-                        </div>
-                    </div>
-                </div>
-            </a>
+            </div>
+            
         </div>
-
-        <!-- Perfil Influente -->
-        <div class="col-lg-3 mb-4 mx-2">
-            <a href="" class="card h-100 shadow border-0 text-decoration-none text-dark">
-                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
-                <div class="card-body p-3">
-                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
-                    <h5 class="card-title mb-3 stretched-link">Perfil Influente</h5>
-                    <p class="card-text mb-0">Descrição breve do perfil comportamental Influente.</p>
-                </div>
-                <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
-                    <div class="d-flex align-items-end justify-content-between">
-                        <div class="small">
-                            <div class="fw-bold">Nome do Perfil</div>
-                            <div class="text-muted">Breve explicação ou data relevante</div>
+        <div class="row">
+            <!-- Perfil Dominante -->
+            <div class="col-lg-3 mb-4">
+                <a href="{% url 'core:perfil_dominante' %}" class="card h-100 shadow border-0 text-decoration-none text-dark">
+                    <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
+                    <div class="card-body p-3">
+                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
+                        <h5 class="card-title mb-3 stretched-link">Perfil Dominante</h5>
+                        <p class="card-text mb-0">O perfil comportamental dominante é caracterizado por ser assertivo, direto e focado em resultados. Pessoas desse perfil são frequentemente líderes e tomam decisões rapidamente.</p>
+                    </div>
+                    <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="small">
+                                <div class="fw-bold">Mais sobre este perfil</div>
+                                <div class="text-muted">Clique neste card para mais informações</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
 
-        <!-- Perfil Estabilidade -->
-        <div class="col-lg-3 mb-4 mx-2">
-            <a href="" class="card h-100 shadow border-0 text-decoration-none text-dark">
-                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
-                <div class="card-body p-3">
-                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
-                    <h5 class="card-title mb-3 stretched-link">Perfil Estabilidade</h5>
-                    <p class="card-text mb-0">Descrição breve do perfil comportamental Estabilidade.</p>
-                </div>
-                <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
-                    <div class="d-flex align-items-end justify-content-between">
-                        <div class="small">
-                            <div class="fw-bold">Nome do Perfil</div>
-                            <div class="text-muted">Breve explicação ou data relevante</div>
+            <!-- Perfil Influente -->
+            <div class="col-lg-3 mb-4">
+                <a href="{% url 'core:perfil_influente' %}" class="card h-100 shadow border-0 text-decoration-none text-dark">
+                    <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
+                    <div class="card-body p-3">
+                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
+                        <h5 class="card-title mb-3 stretched-link">Perfil Influente</h5>
+                        <p class="card-text mb-0">O perfil comportamental influente é sociável, extrovertido e gosta de interagir com outras pessoas. Eles são ótimos comunicadores e têm facilidade para persuadir.</p>
+                    </div>
+                    <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="small">
+                                <div class="fw-bold">Mais sobre este perfil</div>
+                                <div class="text-muted">Clique neste card para mais informações</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-        </div>
+                </a>
+            </div>
 
-        <!-- Perfil Conformado -->
-        <div class="col-lg-3 mb-4 mx-2">
-            <a href="" class="card h-100 shadow border-0 text-decoration-none text-dark">
-                <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
-                <div class="card-body p-3">
-                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
-                    <h5 class="card-title mb-3 stretched-link">Perfil Conformado</h5>
-                    <p class="card-text mb-0">Descrição breve do perfil comportamental Conformado.</p>
-                </div>
-                <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
-                    <div class="d-flex align-items-end justify-content-between">
-                        <div class="small">
-                            <div class="fw-bold">Nome do Perfil</div>
-                            <div class="text-muted">Breve explicação ou data relevante</div>
+            <!-- Perfil Estável -->
+            <div class="col-lg-3 mb-4">
+                <a href="{% url 'core:perfil_estavel' %}" class="card h-100 shadow border-0 text-decoration-none text-dark">
+                    <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
+                    <div class="card-body p-3">
+                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
+                        <h5 class="card-title mb-3 stretched-link">Perfil Estável</h5>
+                        <p class="card-text mb-0">O perfil comportamental de estabilidade é conhecido por ser calmo, paciente e confiável. Essas pessoas valorizam a harmonia e são resistentes ao estresse.</p>
+                    </div>
+                    <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="small">
+                                <div class="fw-bold">Mais sobre este perfil</div>
+                                <div class="text-muted">Clique neste card para mais informações</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
+
+            <!-- Perfil Conformado -->
+            <div class="col-lg-3 mb-4">
+                <a href="{% url 'core:perfil_cauteloso' %}" class="card h-100 shadow border-0 text-decoration-none text-dark">
+                    <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="Perfil DISC" />
+                    <div class="card-body p-3">
+                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">Perfil</div>
+                        <h5 class="card-title mb-3 stretched-link">Perfil Cauteloso</h5>
+                        <p class="card-text mb-0">O perfil comportamental cauteloso é detalhista, preciso e valoriza regras e procedimentos. Eles são bons em seguir instruções e garantir a precisão.</p>
+                    </div>
+                    <div class="card-footer p-3 pt-0 bg-transparent border-top-0">
+                        <div class="d-flex align-items-end justify-content-between">
+                            <div class="small">
+                                <div class="fw-bold">Mais sobre este perfil</div>
+                                <div class="text-muted">Clique neste card para mais informações</div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
+</div>
+
+</div>
 
         <!-- Gráfico DISC-->
         <section class="my-5">
@@ -197,7 +212,7 @@
                                         backgroundColor: [ // Cores de fundo para cada barra
                                             'rgba(255, 0, 0, 1)', // Vermelho para Dominante
                                             'rgba(255, 206, 86, 1)', // Amarelo para Influente
-                                            'rgba(0, 128, 0, 1)', // Verde para Estabilidade
+                                            'rgba(0, 128, 0, 1)', // Verde para Estável
                                             'rgba(54, 162, 235, 1)' // Azul claro para Conformado
                                         ],
 
@@ -252,10 +267,4 @@
 
     <!-- Call to action do Template Bootstrap -->
     <!-- Conteúdo da chamada para ação removido para brevidade -->
-{% endblock %}
-
-{% block footer %}
-    <div class="container text-center py-4">
-        &copy; 2023 Assessment de Perfil Comportamental
-    </div>
 {% endblock %}
