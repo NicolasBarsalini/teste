@@ -1,38 +1,66 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
-{% block title %}Perfil DISC - Dominante{% endblock %}
+{% block title %}Perfil DISC - Cauteloso{% endblock %}
 
 {% block content %}
 <section class="py-5">
-    <div class="container px-5 my-5">
+    <div class="container px-3 my-3">
         <div class="row gx-5">
             <div class="col-lg-12">
-                <!-- Conteúdo do Perfil-->
                 <article>
-                    <!-- Cabeçalho do Perfil-->
-                    <header class="mb-4 text-center">
-                        <!-- Foto do Perfil-->
-                        <div class="mb-4">
-                            <img src="[URL da foto do perfil]" class="img-fluid" alt="Foto do Perfil" width="800" height="400">
-                        </div>
-                        <!-- Título do Perfil-->
-                        <div><h1 class="fw-bolder mb-1:">Perfil DISC: [Nome do Perfil]</h1>
-                        <!-- Subtítulo do Perfil-->
-                        <div class="text-muted fst-italic mb-2 text-center">Compreendendo o [Nome do Perfil]</div>
-                    </header>
-                    <!-- Conteúdo do Perfil-->
-                    <section class="mb-5">
-                        <p class="fs-5 mb-4 text-center">[Adicione o conteúdo descritivo sobre o perfil DISC específico aqui.]</p>
-                        <!-- Mais parágrafos conforme necessário -->
-                    </section>
+                    <section class="py-5">
+                        <div class="container px-3 my-3">
+                            <div class="row gx-5">
+                                <div class="col-lg-12">
+                                    <header class="mb-4 text-center">
+                                        <div class="mb-4">
+                                            <img src="{% static 'images/capa_perfil_cauteloso.jpg' %}" class="img-fluid rounded-3" alt="Foto do Perfil Cauteloso" width="800" height="400">
+                                        </div>
+                                        <div><h1 class="fw-bolder mb-1">Perfil DISC Cauteloso - O Analista!</h1>
+                                        <div class="text-muted fst-italic mb-2 text-center">Compreendendo o Perfil Cauteloso</div>
+                                    </header>
 
+                                    <section class="mb-5">
+                                        <p class="fs-5 mb-4 text-justify-content-center">
+                                            🔍 <strong>O Que é:</strong><br>
+                                            <p>Se você adora análise, organização e precisão, você pode ser um "C". O perfil Cauteloso, ou "C" no DISC, é como aquele detetive inteligente dos filmes que analisa todos os detalhes.</p>
+                                            
+                                            <p>Esse perfil é reconhecido por sua atenção aos detalhes, organização, cuidado e abordagem metódica. Você é como um analista meticuloso que valoriza a precisão.</p>
+                                            
+                                            <p>Seja na análise minuciosa de dados ou na garantia da qualidade e precisão do trabalho, suas habilidades são altamente valiosas para a equipe. Sua abordagem cautelosa pode ser o diferencial em projetos complexos.</p>
+                                            
+                                            <p>Sua paixão por sistemas, processos e regras faz de você alguém que valoriza a consistência e a ordem no ambiente de trabalho.</p>
+                                        </p>
+                                    </section>
+
+                                    <section class="fs-5 mb-4 text-justify-content-center">
+                                        🧠 <strong>Características Principais:</strong><br>
+                                        - <strong>Analítico:</strong> Adora detalhes e é meticuloso.<br>
+                                        - <strong>Organizado:</strong> Tudo precisa estar em ordem para você.<br>
+                                        - <strong>Cuidadoso:</strong> Pensativo e preciso em suas ações.<br>
+                                        - <strong>Metódico:</strong> Valoriza sistemas, processos e regras.
+                                    </section>
+
+                                    <section class="fs-5 mb-4 text-jus">
+                                        📈 <strong>No Trabalho:</strong><br>
+                                        Como estagiário ou no seu primeiro emprego, sua atenção aos detalhes e abordagem metódica são super valiosas. Você será aquele que garante a qualidade e precisão do trabalho.
+                                    </section>
+
+                                    <section class="fs-5 mb-4 text-jus">
+                                        💡 <strong>Dicas de Sucesso:</strong><br>
+                                        1. <strong>Valorize seu perfeccionismo:</strong> Ele é um diferencial, mas cuidado para não se tornar um obstáculo.<br>
+                                        2. <strong>Seja flexível:</strong> Nem tudo precisa ser perfeito. Aprenda a adaptar-se quando necessário.<br>
+                                        3. <strong>Compartilhe suas análises:</strong> Seus insights podem ser valiosos para a equipe. Não tenha medo de compartilhá-los.
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <!-- Tabela de Pontos Fortes e Fracos -->
                     <section>
-                        <h2 class="fw-bolder mb-4 text-center">Pontos Fortes e Fracos</h2>
-                        <table class="table table-danger table-bordered text-center table-striped table-borderles" style="border-radius: 10px;">
-                            <thead class = "">
+                        <table class="table table-info table-bordered text-center table-striped table-borderles" style="border-radius: 10px;">
+                            <thead class = "table-dark">
                                 <tr>
                                     <th>Pontos Fortes</th>
                                     <th>Pontos Fracos</th>
@@ -40,54 +68,45 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>[Ponto 1 Forte]</td>
-                                    <td>[Ponto 1 Fraco]</td>
+                                    <td>Atenção aos detalhes</td>
+                                    <td>Pode ser percebido como perfeccionista</td>
                                 </tr>
                                 <tr>
-                                    <td>[Ponto 2 Forte]</td>
-                                    <td>[Ponto 2 Fraco]</td>
+                                    <td>Organização e precisão</td>
+                                    <td>Resistência à mudança</td>
                                 </tr>
                                 <tr>
-                                    <td>[Ponto 2 Forte]</td>
-                                    <td>[Ponto 2 Fraco]</td>
-                                </tr>
-                                <tr>
-                                    <td>[Ponto 2 Forte]</td>
-                                    <td>[Ponto 2 Fraco]</td>
-                                </tr>
-                                <tr>
-                                    <td>[Ponto 2 Forte]</td>
-                                    <td>[Ponto 2 Fraco]</td>
-                                </tr>
-                                <!-- Repita as linhas para os pontos 3 a 5 -->
-                            </tbody>
-                        </table>
-                    </section>
-
-                    <!-- Seção de Perfis de Pessoas -->
-                    <section class="text-center mt-5">
-                        <h2 class="fw-bolder mb-4">Pessoas com este Perfil</h2>
-                        <div class="row">
-                            <!-- Molde de círculo para cada pessoa -->
-                            <div class="col">
-                                <img src="[URL da foto da pessoa 1]" class="rounded-circle" alt="Pessoa 1" style="width: 100px; height: 100px;">
-                                <p class="fw-bold mt-2">Nome Pessoa 1</p>
+                                    <td>Cautela e pensamento crítico</td>
+                                    <td>Análise excessiva de detalhes</td
+                                    </tr>
+                                    <tr>
+                                        <td>Metódico e sistemático</td>
+                                        <td>Esforço excessivo para perfeição</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ênfase na precisão e qualidade</td>
+                                        <td>Dificuldade em delegar tarefas</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Abordagem analítica e reflexiva</td>
+                                        <td>Relutância em aceitar mudanças rápidas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </section>
+    
+                        <!-- Seção de Perfis de Pessoas -->
+                        <section class="text-center mt-5">
+                            <h2 class="fw-bolder mb-4">Pessoas com este Perfil</h2>
+                            <div class="row">
+                                <!-- Molde de círculo para cada pessoa -->
+                                <!-- [Insira aqui as imagens e nomes de três pessoas com o perfil Cauteloso] -->
                             </div>
-                            <div class="col">
-                                <img src="[URL da foto da pessoa 2]" class="rounded-circle" alt="Pessoa 2" style="width: 100px; height: 100px;">
-                                <p class="fw-bold mt-2">Nome Pessoa 2</p>
-                            </div>
-                            <div class="col">
-                                <img src="[URL da foto da pessoa 3]" class="rounded-circle" alt="Pessoa 3" style="width: 100px; height: 100px;">
-                                <p class="fw-bold mt-2">Nome Pessoa 3</p>
-                            </div>
-                        </div>
-                    </section>
-                    
-                </article>
+                        </section>
+                        
+                    </article>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-{% endblock %}
-
+    </section>
+    {% endblock %}

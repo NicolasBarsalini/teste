@@ -76,17 +76,17 @@ class ResultadoView(DetailView):
         'c': 'Conformado'
     }
         PERFIL_DESCRICAO = {
-        'd': 'Descrição para perfil Dominante', # aqui deverão ser inseridos os textos de cada perfil
-        'i': 'Descrição para perfil Influente',
-        's': 'Descrição para perfil Estabilidade',
-        'c': 'Descrição para perfil Conformado'
+        'd': 'Perfil Dominante: Indivíduos com características assertivas e orientados para resultados. São diretos, assertivos e orientados para metas, frequentemente assumindo o controle e tomando decisões rapidamente.',
+        'i': 'Perfil Influente: Pessoas comunicativas e sociáveis, que gostam de interações sociais. São otimistas, persuasivos e gostam de influenciar os outros. Tendem a ser expressivos e energéticos.',
+        's': 'Perfil Estabilidade: Indivíduos estáveis e consistentes, valorizam a harmonia e a segurança. São pacientes, leais e preferem ambientes mais previsíveis. Tendem a ser calmos e amigáveis.',
+        'c': 'Perfil Conformado: Pessoas precisas e analíticas, que valorizam a precisão e os detalhes. São cautelosos, meticulosos e buscam a exatidão. Tendem a ser lógicos e focados em procedimentos.'
     }
 
         LOCAIS_TRABALHO = {
-        'd': 'Locais ideais para perfil Dominante', #aqui deverão ser inseridos os locais de trabalho de cada perfil
-        'i': 'Locais ideais para perfil Influente',
-        's': 'Locais ideais para perfil Estabilidade',
-        'c': 'Locais ideais para perfil Conformado'
+        'd': 'Ambientes onde a liderança assertiva e a tomada de decisão rápida são valorizadas, como cargos de gestão, empreendedorismo ou áreas competitivas como vendas e negociações.',
+        'i': 'Trabalhos que envolvam interação social e comunicação, como marketing, relações públicas, áreas de entretenimento, vendas e cargos que exijam networking.',
+        's': 'Ambientes com equilíbrio, estabilidade e foco em relações interpessoais, como serviços sociais, áreas de suporte ao cliente, administração e cargos que demandem paciência e cooperação.',
+        'c': 'Atividades que valorizem precisão e análise detalhada, como engenharia, desenvolvimento de software, áreas financeiras, pesquisa científica e cargos que demandem rigor técnico e meticulosidade.'
     }
 
         

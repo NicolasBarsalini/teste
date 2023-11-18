@@ -1,38 +1,68 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
-{% block title %}Perfil DISC - Dominante{% endblock %}
+{% block title %}Perfil DISC - Estável{% endblock %}
 
 {% block content %}
-<section class="py-5">
-    <div class="container px-5 my-5">
-        <div class="row gx-5">
-            <div class="col-lg-12">
-                <!-- Conteúdo do Perfil-->
-                <article>
-                    <!-- Cabeçalho do Perfil-->
-                    <header class="mb-4 text-center">
-                        <!-- Foto do Perfil-->
-                        <div class="mb-4">
-                            <img src="[URL da foto do perfil]" class="img-fluid" alt="Foto do Perfil" width="800" height="400">
-                        </div>
-                        <!-- Título do Perfil-->
-                        <div><h1 class="fw-bolder mb-1:">Perfil DISC: [Nome do Perfil]</h1>
-                        <!-- Subtítulo do Perfil-->
-                        <div class="text-muted fst-italic mb-2 text-center">Compreendendo o [Nome do Perfil]</div>
-                    </header>
-                    <!-- Conteúdo do Perfil-->
-                    <section class="mb-5">
-                        <p class="fs-5 mb-4 text-center">[Adicione o conteúdo descritivo sobre o perfil DISC específico aqui.]</p>
-                        <!-- Mais parágrafos conforme necessário -->
-                    </section>
 
+            <section class="py-3">
+                <div class="">
+                    <div class="row gx-5">
+                        <div class="col-lg-12"
+                <article>
+                    <section class="py-3">
+                        <div class="container px-3 my-3">
+                            <div class="row gx-5">
+                                <div class="col-lg-12">
+                                    <header class="mb-4 text-center">
+                                        <div class="mb-4">
+                                            <img src="{% static 'images/capa_perfil_estavel.jpg' %}" class="img-fluid rounded-3" alt="Foto do Perfil Estável" width="800" height="400">
+                                        </div>
+                                        <div><h1 class="fw-bolder mb-1">Perfil DISC Estável - O Pacificador!</h1>
+                                        <div class="text-muted fst-italic mb-2 text-center">Compreendendo o Perfil Estável</div>
+                                    </header>
+
+                                    <section class="mb-5">
+                                        <p class="fs-5 mb-4 text-justify-content-center">
+                                            🌿 <strong>O Que é:</strong><br>
+                                            <p>Se você é alguém que valoriza harmonia e é super colaborativo, você pode ser um "S". O perfil Estável, ou "S" no DISC, é como aquele amigo confiável e calmo que todo grupo precisa.</p>
+                                            
+                                            <p>Esse perfil é reconhecido por sua paciência, amor pelo trabalho em equipe e comprometimento inquestionável. Você é uma peça fundamental para manter a paz e a harmonia no ambiente de trabalho.</p>
+                                            
+                                            <p>Seja como um porto seguro em uma equipe, mostrando consistência e confiabilidade, ou como a voz tranquila que mantém o grupo unido, você tem um papel valioso no sucesso coletivo.</p>
+                                            
+                                            <p>Sua abordagem paciente e cooperativa é um trunfo, especialmente em ambientes de trabalho que buscam equilíbrio e estabilidade. Seus colegas de equipe apreciam sua presença e confiam na sua lealdade.</p>
+                                        </p>
+                                    </section>
+
+                                    <section class="fs-5 mb-4 text-justify-content-center">
+                                        🍃 <strong>Características Principais:</strong><br>
+                                        - <strong>Paciente:</strong> Nada parece te tirar do sério. Sua calma é notável!<br>
+                                        - <strong>Cooperativo:</strong> Você é um verdadeiro mestre na arte do trabalho em equipe e na busca por harmonia.<br>
+                                        - <strong>Leal:</strong> Sua lealdade é inquestionável. Você é uma rocha em quem se pode confiar.<br>
+                                        - <strong>Consistente:</strong> Prometeu? Com certeza cumpriu! Sua consistência é sua marca registrada.
+                                    </section>
+
+                                    <section class="fs-5 mb-4 text-jus">
+                                        🔥 <strong>No Trabalho:</strong><br>
+                                        Em estágios ou no seu primeiro emprego, suas habilidades de paciência e trabalho em equipe são inestimáveis. Você é o elo que mantém a equipe unida e focada!
+                                    </section>
+
+                                    <section class="fs-5 mb-4 text-jus">
+                                        💡 <strong>Dicas de Sucesso:</strong><br>
+                                        1. <strong>Valorize suas relações:</strong> Continue sendo um excelente parceiro de equipe.<br>
+                                        2. <strong>Fale mais:</strong> Sua opinião é importante, então não tenha medo de expressá-la.<br>
+                                        3. <strong>Aceite mudanças:</strong> Esteja aberto às mudanças. Flexibilidade é uma grande qualidade no mundo profissional.
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <!-- Tabela de Pontos Fortes e Fracos -->
                     <section>
-                        <h2 class="fw-bolder mb-4 text-center">Pontos Fortes e Fracos</h2>
-                        <table class="table table-danger table-bordered text-center table-striped table-borderles" style="border-radius: 10px;">
-                            <thead class = "">
+                        
+                        <table class="table table-success table-bordered text-center table-striped table-borderless" style="border-radius: 10px;">
+                            <thead class = "table-dark">
                                 <tr>
                                     <th>Pontos Fortes</th>
                                     <th>Pontos Fracos</th>
@@ -40,26 +70,25 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>[Ponto 1 Forte]</td>
-                                    <td>[Ponto 1 Fraco]</td>
+                                    <td>Assertividade e liderança</td>
+                                    <td>Pode ser percebido como autoritário</td>
                                 </tr>
                                 <tr>
-                                    <td>[Ponto 2 Forte]</td>
-                                    <td>[Ponto 2 Fraco]</td>
+                                    <td>Capacidade de tomar decisões rapidamente</td>
+                                    <td>Tendência a não considerar opiniões alheias</td>
                                 </tr>
                                 <tr>
-                                    <td>[Ponto 2 Forte]</td>
-                                    <td>[Ponto 2 Fraco]</td>
+                                    <td>Resolução eficaz de problemas</td>
+                                    <td>Impaciência com detalhes ou demoras</td>
                                 </tr>
                                 <tr>
-                                    <td>[Ponto 2 Forte]</td>
-                                    <td>[Ponto 2 Fraco]</td>
+                                    <td>Independência e autoconfiança</td>
+                                    <td>Dificuldade em mostrar empatia</td>
                                 </tr>
                                 <tr>
-                                    <td>[Ponto 2 Forte]</td>
-                                    <td>[Ponto 2 Fraco]</td>
+                                    <td>Foco em resultados e eficiência</td>
+                                    <td>Risco de conflitos em equipe</td>
                                 </tr>
-                                <!-- Repita as linhas para os pontos 3 a 5 -->
                             </tbody>
                         </table>
                     </section>
@@ -69,18 +98,7 @@
                         <h2 class="fw-bolder mb-4">Pessoas com este Perfil</h2>
                         <div class="row">
                             <!-- Molde de círculo para cada pessoa -->
-                            <div class="col">
-                                <img src="[URL da foto da pessoa 1]" class="rounded-circle" alt="Pessoa 1" style="width: 100px; height: 100px;">
-                                <p class="fw-bold mt-2">Nome Pessoa 1</p>
-                            </div>
-                            <div class="col">
-                                <img src="[URL da foto da pessoa 2]" class="rounded-circle" alt="Pessoa 2" style="width: 100px; height: 100px;">
-                                <p class="fw-bold mt-2">Nome Pessoa 2</p>
-                            </div>
-                            <div class="col">
-                                <img src="[URL da foto da pessoa 3]" class="rounded-circle" alt="Pessoa 3" style="width: 100px; height: 100px;">
-                                <p class="fw-bold mt-2">Nome Pessoa 3</p>
-                            </div>
+                            <!-- [Insira aqui as imagens e nomes de três pessoas com o perfil Dominante] -->
                         </div>
                     </section>
                     
