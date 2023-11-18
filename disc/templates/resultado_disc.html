@@ -5,24 +5,71 @@
 {% block title %}Resultados DISC{% endblock %}
 
 {% block content %}
-    <h1>Seus Resultados</h1>
-    
-    <h2>Médias por perfil</h2>
-    <ul>
-        <li>Dominante: {{ object.dominante }}</li>
-        <li>Influente: {{ object.influente }}</li>
-        <li>Estabilidade: {{ object.estabilidade }}</li>
-        <li>Conformado: {{ object.conformado }}</li>
-    </ul>
-    
-    <h2>Seu perfil mais alto: {{ perfil_mais_alto }}</h2>
-
-    <h3>Descrição</h3>
-    <p>{{ descricao_perfil }}</p>
-    
-    <h3>Locais de trabalho ideais</h3>
-    <p>{{ locais_trabalho }}</p>
-    
-    <!-- Link para voltar ao perfil do usuário -->
-    <a href="{% url 'user_auth:perfil' %}">Retornar ao Perfil</a>
+<section class="py-5">
+    <div class="container px-5">
+        <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5 text-center">
+            <div class="mb-5">
+                <div class="feature bg-primary bg-gradient text-white rounded-5 mb-3">
+                    <i class="bi bi-person-badge"></i>
+                </div>
+                <h1 class="fw-bolder">Seus Resultados</h1>
+                <p class="lead fw-normal text-muted mb-0">.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-6">
+                    <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                        <h2>
+                            <i class="bi bi-graph-up text-primary"></i> Médias por perfil
+                        </h2>
+                        <ul class="list-unstyled">
+                            <li><i class="bi bi-person text-primary"></i> Dominante: {{ object.dominante }}</li>
+                            <li><i class="bi bi-person text-primary"></i> Influente: {{ object.influente }}</li>
+                            <li><i class="bi bi-person text-primary"></i> Estabilidade: {{ object.estabilidade }}</li>
+                            <li><i class="bi bi-person text-primary"></i> Conformado: {{ object.conformado }}</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                        <h2>
+                            <i class="bi bi-person-check text-primary"></i> Seu perfil mais alto: {{ perfil_mais_alto }}
+                        </h2>
+                        <h3><i class="bi bi-info-circle text-primary"></i> Descrição</h3>
+                        <p>{{ descricao_perfil }}</p>
+                    </div>
+                    
+                    <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                        <h3>
+                            <i class="bi bi-geo-alt text-primary"></i> Locais de trabalho ideais
+                        </h3>
+                        <p>{{ locais_trabalho }}</p>
+                    </div>
+                    
+                    <!-- Condição para exibir o botão de acordo com o perfil mais alto -->
+                    {% if perfil_mais_alto == 'Dominante' %}
+                        <a href="{% url 'core:perfil_dominante' %}" class="btn btn-primary">
+                            Leia mais sobre seu perfil
+                        </a>
+                    {% elif perfil_mais_alto == 'Influente' %}
+                        <a href="{% url 'core:perfil_influente' %}" class="btn btn-primary">
+                            Leia mais sobre seu perfil
+                        </a>
+                    {% elif perfil_mais_alto == 'Estabilidade' %}
+                        <a href="{% url 'core:perfil_estabilidade' %}" class="btn btn-primary">
+                            Leia mais sobre seu perfil
+                        </a>
+                    {% elif perfil_mais_alto == 'Conformado' %}
+                        <a href="{% url 'core:perfil_cauteloso' %}" class="btn btn-primary">
+                            Leia mais sobre seu perfil
+                        </a>
+                    {% endif %}
+                    
+                    <!-- Link para voltar ao perfil do usuário -->
+                    <a href="{% url 'user_auth:perfil' %}" class="btn btn-primary">
+                        Retornar ao Perfil <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

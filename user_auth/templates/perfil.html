@@ -1,29 +1,81 @@
-<!-- FILEPATH: /c:/Users/gonca/Desktop/Danielle/TCC/TCC_oficial/disc_assessment/user_auth/templates/perfil.html -->
-
 {% extends 'base.html' %}
 
 {% block title %}Perfil Usuário{% endblock %}
 
 {% block content %}
-    <h1>Seu Perfil DISC</h1>
-    {% if resultado_disc %}
-        <p>Dominante: {{ resultado_disc.dominante }}</p>
-        <p>Influente: {{ resultado_disc.influente }}</p>
-        <p>Estabilidade: {{ resultado_disc.estabilidade }}</p>
-        <p>Conformado: {{ resultado_disc.conformado }}</p>
+<section class="py-5">
+    <div class="container px-5">
+        <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5 text-center">
+            <div class="mb-5">
+                <div class="feature bg-primary bg-gradient text-white rounded-5 mb-3">
+                    <i class="bi bi-person-badge"></i>
+                </div>
+                <h1 class="fw-bolder">Seu Perfil DISC</h1>
+                <p class="lead fw-normal text-muted mb-0">.</p>
+            </div>
+            {% if resultado_disc %}
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                            <h2><i class="bi bi-graph-up text-primary"></i> Médias por perfil</h2>
+                            <ul class="list-unstyled">
+                                <li><i class="bi bi-person text-primary"></i> Dominante: {{ resultado_disc.dominante }}</li>
+                                <li><i class="bi bi-person text-primary"></i> Influente: {{ resultado_disc.influente }}</li>
+                                <li><i class="bi bi-person text-primary"></i> Estabilidade: {{ resultado_disc.estabilidade }}</li>
+                                <li><i class="bi bi-person text-primary"></i> Conformado: {{ resultado_disc.conformado }}</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                            <h2><i class="bi bi-person-check text-primary"></i> Seu perfil mais alto: {{ perfil_mais_alto }}</h2><br>
+                            <h3><i class="bi bi-info-circle text-primary"></i> Descrição</h3>
+                            <p>{{ descricao_perfil }}</p>
+                        </div>
+                        
+                        <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                            <h3><i class="bi bi-geo-alt text-primary text-justify-content-center"></i> Locais de trabalho ideais</h3>
+                            <p>{{ locais_trabalho }}</p>
+                        </div>
 
-        <h2>Seu perfil mais alto: {{ perfil_mais_alto }}</h2>
-
-        <h3>Descrição</h3>
-        <p>{{ descricao_perfil }}</p>
-        
-        <h3>Locais de trabalho ideais</h3>
-        <p>{{ locais_trabalho }}</p>
-        
-        <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary">Refazer o Teste DISC</a>
-    {% else %}
-        <h2>Você ainda não fez o teste DISC</h2>
-        <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary">Fazer o Teste DISC</a>
-    {% endif %}
-    <a href="{% url 'user_auth:logout' %}" class="btn btn-danger">Deslogar</a>
+                                            <!-- Condição para exibir o botão de acordo com o perfil mais alto -->
+                            {% if perfil_mais_alto == 'Dominante' %}
+                                <a href="{% url 'core:perfil_dominante' %}" class="btn btn-primary">
+                                    Leia mais sobre seu perfil
+                                </a>
+                            {% elif perfil_mais_alto == 'Influente' %}
+                                <a href="{% url 'core:perfil_influente' %}" class="btn btn-primary">
+                                    Leia mais sobre seu perfil
+                                </a>
+                            {% elif perfil_mais_alto == 'Estabilidade' %}
+                                <a href="{% url 'core:perfil_estabilidade' %}" class="btn btn-primary">
+                                    Leia mais sobre seu perfil
+                                </a>
+                            {% elif perfil_mais_alto == 'Conformado' %}
+                                <a href="{% url 'core:perfil_cauteloso' %}" class="btn btn-primary">
+                                    Leia mais sobre seu perfil
+                                </a>
+                            {% endif %}
+                        
+                        <!-- Link para voltar ao perfil do usuário -->
+                        <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary">
+                            Fazer/Refazer o Teste DISC <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="{% url 'user_auth:logout' %}" class="btn btn-danger">
+                        Deslogar <i class="bi bi-box-arrow-right"></i>
+                    </a>
+                </div>
+            {% else %}
+                <div class="text-center">
+                    <h2>Você ainda não fez o teste DISC</h2>
+                    <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary">
+                        Fazer o Teste DISC <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
 {% endblock %}

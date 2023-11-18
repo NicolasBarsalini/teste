@@ -2,4 +2,95 @@
 
 {% load static %}
 
-<!-- O restante do seu código aqui -->
+{% block title %}Perfil DISC - Influente{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-12">
+                <!-- Conteúdo do Perfil-->
+                <article>
+                    <!-- Cabeçalho do Perfil-->
+                    <header class="mb-4 text-center">
+                        <!-- Foto do Perfil-->
+                        <div class="mb-4">
+                            <img src="{% static 'images/perfil_influente.jpg' %}" class="img-fluid" alt="Foto do Perfil Influente" width="800" height="400">
+                        </div>
+                        <!-- Título do Perfil-->
+                        <h1 class="fw-bolder mb-1">Perfil DISC: Influente</h1>
+                        <!-- Subtítulo do Perfil-->
+                        <div class="text-muted fst-italic mb-2 text-center">Compreendendo o Perfil Influente</div>
+                    </header>
+                    <!-- Conteúdo do Perfil-->
+                    <section class="mb-5">
+                        <p class="fs-5 mb-4 text-center text-justify-content-center">
+                            O perfil Influente, ou "I" no DISC, é como aquela pessoa carismática das séries que todos adoram. Se você ama conversar, inspirar pessoas e tem um brilho natural, você pode ser um "I"! Este perfil é marcado por uma energia contagiante e um espírito sociável que ilumina qualquer ambiente.
+                            <br><br>
+                            <strong>Sociável:</strong> Você adora interagir e fazer novos amigos. Networking? Isso é com você mesmo!
+                            <br>
+                            <strong>Entusiasmado:</strong> Sua energia e otimismo são contagiante. Você vê o copo sempre meio cheio.
+                            <br>
+                            <strong>Persuasivo:</strong> Com seu jeito comunicativo, você consegue convencer e motivar os outros com facilidade.
+                            <br>
+                            <strong>Criativo:</strong> Ideias inovadoras? Você tem de monte! Sua criatividade não conhece limites.
+                        </p>
+                    </section>
+
+                    <!-- Tabela de Pontos Fortes e Fracos -->
+                    <section>
+                        <h2 class="fw-bolder mb-4 text-center">Pontos Fortes e Fracos</h2>
+                        <table class="table table-warning table-bordered text-center table-striped" style="border-radius: 10px;">
+                            <thead>
+                                <tr>
+                                    <th>Pontos Fortes</th>
+                                    <th>Pontos Fracos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Excelente Comunicador</td>
+                                    <td>Tendência a se dispersar</td>
+                                </tr>
+                                <tr>
+                                    <td>Inspirador e Motivador</td>
+                                    <td>Pode ser impulsivo</td>
+                                </tr>
+                                <tr>
+                                    <td>Aberto a Novas Experiências</td>
+                                    <td>Desafio com detalhes e rotina</td>
+                                </tr>
+                                <tr>
+                                    <td>Adapta-se Rapidamente a Mudanças</td>
+                                    <td>Às vezes pode ser visto como superficial</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Seção de Perfis de Pessoas -->
+                    <section class="text-center mt-5">
+                        <h2 class="fw-bolder mb-4">Pessoas com este Perfil</h2>
+                        <div class="row">
+                            <!-- Molde de círculo para cada pessoa -->
+                            <!-- Substituir com as imagens e nomes reais -->
+                            <div class="col">
+                                <img src="{% static 'images/pessoa1.jpg' %}" class="rounded-circle" alt="Pessoa 1" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-2">Nome Pessoa 1</p>
+                            </div>
+                            <div class="col">
+                                <img src="{% static 'images/pessoa2.jpg' %}" class="rounded-circle" alt="Pessoa 2" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-2">Nome Pessoa 2</p>
+                            </div>
+                            <div class="col">
+                                <img src="{% static 'images/pessoa3.jpg' %}" class="rounded-circle" alt="Pessoa 3" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-2">Nome Pessoa 3</p>
+                            </div>
+                        </div>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -3,16 +3,27 @@
 {% block title %}Teste DISC{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-6">
-        <h1 class="text-center mb-4">Teste DISC</h1>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary mt-3">Enviar Respostas</button>
+<section class="py-5">
+    <div class="container px-5">
+        <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+            <div class="text-center mb-5">
+                <div class="feature bg-primary bg-gradient text-white rounded-5 mb-3">
+                    <i class="bi bi-pencil"></i>
+                </div>
+                <h1 class="fw-bolder">Teste DISC</h1>
             </div>
-        </form>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p|safe }} <!-- Mantém o form.as_p e usa o |safe para renderizar HTML -->
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary">Enviar Respostas</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 {% endblock %}

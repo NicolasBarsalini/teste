@@ -8,7 +8,7 @@
         <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
             <div class="text-center mb-5">
                 <!-- Aplique a classe bg-gradient junto com bg-primary para criar o efeito degradê -->
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3">
+                <div class="feature bg-primary bg-gradient text-white rounded-5 mb-3">
                     <i class="bi bi-envelope-fill"></i>
                 </div>
                 <h1 class="fw-bolder">Entre em contato</h1>
@@ -35,12 +35,25 @@
                             </div>
                             <!-- Submit Button-->
                             <div class="d-grid">
-                                <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
+                                <button class="btn btn-primary btn-lg" type="submit" onclick="showConfirmation(event)">Enviar</button>
                             </div>
                         </form>
+                        <!-- Aviso após envio -->
+                        <div class="alert alert-success mt-3" id="confirmationMessage" style="display: none;">
+                            Mensagem enviada! Obrigado pelo seu feedback.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        function showConfirmation(event) {
+            event.preventDefault(); // Evita o comportamento padrão do formulário
+            document.getElementById('confirmationMessage').style.display = 'block';
+            document.getElementById('confirmationMessage').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
 {% endblock %}

@@ -2,4 +2,92 @@
 
 {% load static %}
 
-<!-- O restante do seu código aqui -->
+{% block title %}Perfil DISC - Dominante{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-12">
+                <!-- Conteúdo do Perfil-->
+                <article>
+                    <!-- Cabeçalho do Perfil-->
+                    <header class="mb-4 text-center">
+                        <!-- Foto do Perfil-->
+                        <div class="mb-4">
+                            <img src="[URL da foto do perfil]" class="img-fluid" alt="Foto do Perfil" width="800" height="400">
+                        </div>
+                        <!-- Título do Perfil-->
+                        <div><h1 class="fw-bolder mb-1:">Perfil DISC: [Nome do Perfil]</h1>
+                        <!-- Subtítulo do Perfil-->
+                        <div class="text-muted fst-italic mb-2 text-center">Compreendendo o [Nome do Perfil]</div>
+                    </header>
+                    <!-- Conteúdo do Perfil-->
+                    <section class="mb-5">
+                        <p class="fs-5 mb-4 text-center">[Adicione o conteúdo descritivo sobre o perfil DISC específico aqui.]</p>
+                        <!-- Mais parágrafos conforme necessário -->
+                    </section>
+
+                    <!-- Tabela de Pontos Fortes e Fracos -->
+                    <section>
+                        <h2 class="fw-bolder mb-4 text-center">Pontos Fortes e Fracos</h2>
+                        <table class="table table-danger table-bordered text-center table-striped table-borderles" style="border-radius: 10px;">
+                            <thead class = "">
+                                <tr>
+                                    <th>Pontos Fortes</th>
+                                    <th>Pontos Fracos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[Ponto 1 Forte]</td>
+                                    <td>[Ponto 1 Fraco]</td>
+                                </tr>
+                                <tr>
+                                    <td>[Ponto 2 Forte]</td>
+                                    <td>[Ponto 2 Fraco]</td>
+                                </tr>
+                                <tr>
+                                    <td>[Ponto 2 Forte]</td>
+                                    <td>[Ponto 2 Fraco]</td>
+                                </tr>
+                                <tr>
+                                    <td>[Ponto 2 Forte]</td>
+                                    <td>[Ponto 2 Fraco]</td>
+                                </tr>
+                                <tr>
+                                    <td>[Ponto 2 Forte]</td>
+                                    <td>[Ponto 2 Fraco]</td>
+                                </tr>
+                                <!-- Repita as linhas para os pontos 3 a 5 -->
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <!-- Seção de Perfis de Pessoas -->
+                    <section class="text-center mt-5">
+                        <h2 class="fw-bolder mb-4">Pessoas com este Perfil</h2>
+                        <div class="row">
+                            <!-- Molde de círculo para cada pessoa -->
+                            <div class="col">
+                                <img src="[URL da foto da pessoa 1]" class="rounded-circle" alt="Pessoa 1" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-2">Nome Pessoa 1</p>
+                            </div>
+                            <div class="col">
+                                <img src="[URL da foto da pessoa 2]" class="rounded-circle" alt="Pessoa 2" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-2">Nome Pessoa 2</p>
+                            </div>
+                            <div class="col">
+                                <img src="[URL da foto da pessoa 3]" class="rounded-circle" alt="Pessoa 3" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-2">Nome Pessoa 3</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
