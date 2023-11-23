@@ -39,41 +39,39 @@
 
                                             <!-- Condição para exibir o botão de acordo com o perfil mais alto -->
                             {% if perfil_mais_alto == 'Dominante' %}
-                                <a href="{% url 'core:perfil_dominante' %}" class="btn btn-primary">
+                                <a href="{% url 'core:perfil_dominante' %}" class="btn btn-dark">
                                     Leia mais sobre seu perfil
                                 </a>
                             {% elif perfil_mais_alto == 'Influente' %}
-                                <a href="{% url 'core:perfil_influente' %}" class="btn btn-primary">
+                                <a href="{% url 'core:perfil_influente' %}" class="btn btn-dark">
                                     Leia mais sobre seu perfil
                                 </a>
                             {% elif perfil_mais_alto == 'Estabilidade' %}
-                                <a href="{% url 'core:perfil_estabilidade' %}" class="btn btn-primary">
+                                <a href="{% url 'core:perfil_estabilidade' %}" class="btn btn-dark">
                                     Leia mais sobre seu perfil
-                                </a>
+                                </a><br>
                             {% elif perfil_mais_alto == 'Conformado' %}
-                                <a href="{% url 'core:perfil_cauteloso' %}" class="btn btn-primary">
+                                <a href="{% url 'core:perfil_cauteloso' %}" class="btn btn-dark">
                                     Leia mais sobre seu perfil
                                 </a>
                             {% endif %}
                         
                         <!-- Link para voltar ao perfil do usuário -->
-                        <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary">
-                            Fazer/Refazer o Teste DISC <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="text-center mt-4">
-                    <a href="{% url 'user_auth:logout' %}" class="btn btn-danger">
-                        Deslogar <i class="bi bi-box-arrow-right"></i>
-                    </a>
-                </div>
-            {% else %}
-                <div class="text-center">
-                    <h2>Você ainda não fez o teste DISC</h2>
-                    <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary">
-                        Fazer o Teste DISC <i class="bi bi-arrow-right"></i>
-                    </a>
-                </div>
+                        <div class="text-center mt-4 d-flex justify-content-center align-items-center">
+                            <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary mb-4 me-2">
+                                Fazer/Refazer o Teste DISC <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <a href="{% url 'user_auth:logout' %}" class="btn btn-danger mb-4">
+                                Deslogar <i class="bi bi-box-arrow-right"></i>
+                            </a>
+                        </div>
+                        {% else %}
+                        <div class="text-center">
+                            <h2>Você ainda não fez o teste DISC</h2>
+                            <a href="{% url 'disc:teste_disc' %}" class="btn btn-primary">
+                                Fazer o Teste DISC <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
             {% endif %}
         </div>
     </div>

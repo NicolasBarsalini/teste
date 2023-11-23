@@ -43,6 +43,43 @@
                         </h3>
                         <p>{{ locais_trabalho }}</p>
                     </div>
+
+                    {% if perfil_mais_alto == 'Dominante' %}
+                    <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                        <h3>
+                            <i class="bi bi-info-circle text-primary"></i> Descrição do Perfil Dominante
+                        </h3>
+                        <p>A descrição específica para o perfil dominante vai aqui.</p>
+                    </div>
+                    {% elif perfil_mais_alto == 'Influente' %}
+                        <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                            <h3>
+                                <i class="bi bi-info-circle text-primary"></i> Descrição do Perfil Influente
+                            </h3>
+                            <p>A descrição específica para o perfil influente vai aqui.</p>
+                        </div>
+                    {% elif perfil_mais_alto == 'Estabilidade' %}
+                        <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                            <h3>
+                                <i class="bi bi-info-circle text-primary"></i> Descrição do Perfil Estabilidade
+                            </h3>
+                            <p>A descrição específica para o perfil estabilidade vai aqui.</p>
+                        </div>
+                    {% elif perfil_mais_alto == 'Conformado' %}
+                        <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                            <h3>
+                                <i class="bi bi-info-circle text-primary"></i> Descrição do Perfil Conformado
+                            </h3>
+                            <p>A descrição específica para o perfil conformado vai aqui.</p>
+                        </div>
+                    {% else %}
+                        <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                            <h3>
+                                <i class="bi bi-info-circle text-primary"></i> Você ainda não fez o teste
+                            </h3>
+                            <p>Faça o teste para descobrir seu perfil.</p>
+                        </div>
+                    {% endif %}
                     
                     <!-- Condição para exibir o botão de acordo com o perfil mais alto -->
                     {% if perfil_mais_alto == 'Dominante' %}

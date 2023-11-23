@@ -24,13 +24,13 @@
                                     <section class="mb-5">
                                         <p class="fs-5 mb-4 text-justify-content-center">
                                             🔍 <strong>O Que é:</strong><br>
-                                            <p>Se você adora análise, organização e precisão, você pode ser um "C". O perfil Cauteloso, ou "C" no DISC, é como aquele detetive inteligente dos filmes que analisa todos os detalhes.</p>
-                                            
-                                            <p>Esse perfil é reconhecido por sua atenção aos detalhes, organização, cuidado e abordagem metódica. Você é como um analista meticuloso que valoriza a precisão.</p>
-                                            
-                                            <p>Seja na análise minuciosa de dados ou na garantia da qualidade e precisão do trabalho, suas habilidades são altamente valiosas para a equipe. Sua abordagem cautelosa pode ser o diferencial em projetos complexos.</p>
-                                            
-                                            <p>Sua paixão por sistemas, processos e regras faz de você alguém que valoriza a consistência e a ordem no ambiente de trabalho.</p>
+                                            <p class="fs-5 mb-4 text-justify-content-center">Se você adora análise, organização e precisão, você pode ser um "C". O perfil Cauteloso, ou "C" no DISC, é como aquele detetive inteligente dos filmes que analisa todos os detalhes.</p>
+
+                                            <p class="fs-5 mb-4 text-justify-content-center">Esse perfil é reconhecido por sua atenção aos detalhes, organização, cuidado e abordagem metódica. Você é como um analista meticuloso que valoriza a precisão.</p>
+
+                                            <p class="fs-5 mb-4 text-justify-content-center">Seja na análise minuciosa de dados ou na garantia da qualidade e precisão do trabalho, suas habilidades são altamente valiosas para a equipe. Sua abordagem cautelosa pode ser o diferencial em projetos complexos.</p>
+
+                                            <p class="fs-5 mb-4 text-justify-content-center">Sua paixão por sistemas, processos e regras faz de você alguém que valoriza a consistência e a ordem no ambiente de trabalho.</p>
                                         </p>
                                     </section>
 
@@ -95,16 +95,37 @@
                             </table>
                         </section>
     
-                        <!-- Seção de Perfis de Pessoas -->
-                        <section class="text-center mt-5">
-                            <h2 class="fw-bolder mb-4">Pessoas com este Perfil</h2>
-                            <div class="row">
-                                <!-- Molde de círculo para cada pessoa -->
-                                <!-- [Insira aqui as imagens e nomes de três pessoas com o perfil Cauteloso] -->
+                    <!-- Seção de Perfis de Pessoas -->
+                    <section class="text-center mt-5">
+                        <h2 class="fw-bolder mb-4">Pessoas com este Perfil</h2>
+                        <div class="row">
+                            <!-- Molde de círculo para cada pessoa -->
+                            <!-- Substituir com as imagens e nomes reais -->
+                            <div class="col">
+                                <img src="{% static 'images/c_mark_zuckerberg.jpg' %}" class="rounded-circle" alt="Pessoa 3" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-1 mb-0">Mark Zuckerberg</p>
+                                <p class="text-muted">Empreendedor e CEO da Meta</p>
                             </div>
-                        </section>
-                        
+                            <div class="col">
+                                <img src="{% static 'images/c_albert_einstein.jpg' %}" class="rounded-circle" alt="Pessoa 1" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-1 mb-0">Albert Einstein</p>
+                                <p class="text-muted">Físico Teórico</p>
+                            </div>
+                            <div class="col">
+                                <img src="{% static  'images/c_marie_curie.jpg' %}" class="rounded-circle" alt="Pessoa 2" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-1 mb-0">Marie Curie</p>
+                                <p class="text-muted">Cientista e Física</p>
+                            </div>
+                        </div>
+                    </section>
                     </article>
+
+                    <!-- Botão para voltar à página inicial -->
+
+                    <div class="text-center mt-3">
+                        <a href="{% url 'core:index' %}" class="btn btn-primary mt-5 text-center">Voltar</a>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -25,13 +25,13 @@
                                     <section class="mb-5">
                                         <p class="fs-5 mb-4 text-justify-content-center">
                                             🌿 <strong>O Que é:</strong><br>
-                                            <p>Se você é alguém que valoriza harmonia e é super colaborativo, você pode ser um "S". O perfil Estável, ou "S" no DISC, é como aquele amigo confiável e calmo que todo grupo precisa.</p>
-                                            
-                                            <p>Esse perfil é reconhecido por sua paciência, amor pelo trabalho em equipe e comprometimento inquestionável. Você é uma peça fundamental para manter a paz e a harmonia no ambiente de trabalho.</p>
-                                            
-                                            <p>Seja como um porto seguro em uma equipe, mostrando consistência e confiabilidade, ou como a voz tranquila que mantém o grupo unido, você tem um papel valioso no sucesso coletivo.</p>
-                                            
-                                            <p>Sua abordagem paciente e cooperativa é um trunfo, especialmente em ambientes de trabalho que buscam equilíbrio e estabilidade. Seus colegas de equipe apreciam sua presença e confiam na sua lealdade.</p>
+                                            <p class="fs-5 mb-4 text-justify-content-center">Se você é alguém que valoriza harmonia e é super colaborativo, você pode ser um "S". O perfil Estável, ou "S" no DISC, é como aquele amigo confiável e calmo que todo grupo precisa.</p>
+
+                                            <p class="fs-5 mb-4 text-justify-content-center">Esse perfil é reconhecido por sua paciência, amor pelo trabalho em equipe e comprometimento inquestionável. Você é uma peça fundamental para manter a paz e a harmonia no ambiente de trabalho.</p>
+
+                                            <p class="fs-5 mb-4 text-justify-content-center">Seja como um porto seguro em uma equipe, mostrando consistência e confiabilidade, ou como a voz tranquila que mantém o grupo unido, você tem um papel valioso no sucesso coletivo.</p>
+
+                                            <p class="fs-5 mb-4 text-justify-content-center">Sua abordagem paciente e cooperativa é um trunfo, especialmente em ambientes de trabalho que buscam equilíbrio e estabilidade. Seus colegas de equipe apreciam sua presença e confiam na sua lealdade.</p>
                                         </p>
                                     </section>
 
@@ -60,51 +60,74 @@
                     </section>
                     <!-- Tabela de Pontos Fortes e Fracos -->
                     <section>
-                        
-                        <table class="table table-success table-bordered text-center table-striped table-borderless" style="border-radius: 10px;">
-                            <thead class = "table-dark">
-                                <tr>
-                                    <th>Pontos Fortes</th>
-                                    <th>Pontos Fracos</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Assertividade e liderança</td>
-                                    <td>Pode ser percebido como autoritário</td>
-                                </tr>
-                                <tr>
-                                    <td>Capacidade de tomar decisões rapidamente</td>
-                                    <td>Tendência a não considerar opiniões alheias</td>
-                                </tr>
-                                <tr>
-                                    <td>Resolução eficaz de problemas</td>
-                                    <td>Impaciência com detalhes ou demoras</td>
-                                </tr>
-                                <tr>
-                                    <td>Independência e autoconfiança</td>
-                                    <td>Dificuldade em mostrar empatia</td>
-                                </tr>
-                                <tr>
-                                    <td>Foco em resultados e eficiência</td>
-                                    <td>Risco de conflitos em equipe</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
+                        <div class="container">
+                            <table class="table table-success table-bordered text-center table-striped table-borderless" style="border-radius: 10px;">
+                                <thead class="table-dark">
+                                    <tr>
+                                                            <th>Pontos Fortes</th>
+                                                            <th>Pontos Fracos</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Paciente e tranquilo</td>
+                                                            <td>Pode ser resistente a mudanças</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Excelente trabalho em equipe</td>
+                                                            <td>Tendência a evitar conflitos</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Leal e confiável</td>
+                                                            <td>Dificuldade em tomar decisões rápidas</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Consistente e comprometido</td>
+                                                            <td>Pode ser excessivamente cauteloso</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Harmonia e busca por equilíbrio</td>
+                                                            <td>Tendência a evitar confrontos</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </section>
 
                     <!-- Seção de Perfis de Pessoas -->
                     <section class="text-center mt-5">
                         <h2 class="fw-bolder mb-4">Pessoas com este Perfil</h2>
                         <div class="row">
                             <!-- Molde de círculo para cada pessoa -->
-                            <!-- [Insira aqui as imagens e nomes de três pessoas com o perfil Dominante] -->
+                            <!-- Substituir com as imagens e nomes reais -->
+                            <div class="col">
+                                <img src="{% static  'images/s_bill_gates.jpg' %}" class="rounded-circle" alt="Pessoa 2" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-1 mb-0">Bill Gates</p>
+                                <p class="text-muted">CEO e Fundador da Microsoft</p>
+                            </div>
+                            <div class="col">
+                                <img src="{% static 'images/s_barack_obama.jpg' %}" class="rounded-circle" alt="Pessoa 3" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-1 mb-0">Barack Obama</p>
+                                <p class="text-muted">Ex-Presidente dos EUA, advogado e autor</p>
+                            </div>
+                            <div class="col">
+                                <img src="{% static 'images/s_beyonce.png' %}" class="rounded-circle" alt="Pessoa 1" style="width: 100px; height: 100px;">
+                                <p class="fw-bold mt-1 mb-0">Beyoncé</p>
+                                <p class="text-muted">Cantora, compositora e atriz</p>
+                            </div>
                         </div>
                     </section>
-                    
                 </article>
+
+                    <!-- Botão para voltar à página inicial -->
+
+                    <div class="text-center mt-3">
+                        <a href="{% url 'core:index' %}" class="btn btn-primary mt-5 text-center">Voltar</a>
+                    </div>
+
             </div>
         </div>
     </div>
 </section>
+
 {% endblock %}
