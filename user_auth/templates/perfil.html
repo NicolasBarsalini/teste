@@ -37,7 +37,63 @@
                             <p>{{ locais_trabalho }}</p>
                         </div>
 
-                                            <!-- Condição para exibir o botão de acordo com o perfil mais alto -->
+                        <!-- Condição para exibir os cargos mais provaveis de acordo com o perfil mais alto -->
+                            <div class="bg-light rounded-3 py-4 px-4 px-md-5 mb-4">
+                                <h3>
+                                    <i class="bi bi-info-circle text-primary"></i> Cargos mais suscetíveis na área de T.I.
+                                </h3>
+                                {% if perfil_mais_alto == 'Dominante' %}
+                                    <p>Cargos mais suscetíveis para o perfil dominante:</p>
+                                    <ul style="list-style-type: none; padding: 0;">
+                                        <li style="margin-bottom: 10px; text-align: justify;">
+                                            <strong>Consultoria em TI:</strong> Consultores de TI fornecem recomendações estratégicas e soluções personalizadas para problemas de TI complexos. Este cargo requer habilidades analíticas avançadas e capacidade de tomar decisões informadas rapidamente. Profissionais com perfil Dominante são ideais para este papel, pois possuem a assertividade e a confiança necessárias para aconselhar e guiar clientes.</li>
+                                        <li style="margin-bottom: 10px; text-align: justify;">
+                                            <strong>Gestão de Projetos:</strong> Responsáveis por liderar equipes em projetos de TI, os Gerentes de Projetos definem objetivos, gerenciam recursos e garantem que os prazos sejam cumpridos. Eles precisam de habilidades de liderança, capacidade de tomar decisões rápidas e eficazes, e serem orientados para resultados. A assertividade e a visão estratégica do perfil Dominante são cruciais para o sucesso nesta posição.</li>
+                                        <li style="margin-bottom: 10px; text-align: justify;">
+                                            <strong>Analista de Negócios:</strong> Analistas de Negócios atuam na interface entre TI e os objetivos do negócio, traduzindo necessidades comerciais em requisitos técnicos. Este papel exige uma compreensão clara dos objetivos empresariais e a habilidade de comunicar soluções eficazes. O perfil Dominante é adequado devido à sua capacidade de liderança e habilidades de comunicação estratégica.</li>
+                                    </ul>
+
+                                    {% elif perfil_mais_alto == 'Influente' %}
+                                    <p>Cargos mais suscetíveis para o perfil influente:</p>
+                                    <ul style="list-style-type: none; padding: 0;">
+                                        <li style="margin-bottom: 10px; text-align: justify;">
+                                            <strong>Desenvolvedor Web:</strong> Este profissional é responsável pela criação, design e manutenção de websites. O Desenvolvedor Web utiliza linguagens de programação como HTML, CSS e JavaScript para construir interfaces de usuário atraentes e funcionais. Trabalha em estreita colaboração com designers gráficos e equipes de marketing para garantir que o site atenda às necessidades dos usuários finais e aos objetivos da empresa. O perfil Influente é ideal para esta função devido à sua habilidade de entender as tendências do mercado digital e de se comunicar efetivamente com diferentes equipes.
+                                        </li>
+                                        <li style="margin-bottom: 10px; text-align: justify;">
+                                            <strong>Designer Gráfico:</strong> O Designer Gráfico em TI trabalha na criação de conteúdos visuais para aplicativos, websites e plataformas de mídia digital. Combina habilidades artísticas com tecnologia para comunicar ideias através de imagens, layouts e designs inovadores. Este cargo demanda criatividade, habilidade em softwares de design como Adobe Photoshop e Illustrator, e uma compreensão das preferências do público-alvo. A natureza entusiasmada e a visão criativa do perfil Influente são fundamentais para inovar e captar a atenção dos usuários.
+                                        </li>
+                                        <li style="margin-bottom: 10px; text-align: justify;">
+                                            <strong>Instrutor de TI:</strong> Instrutores de TI são responsáveis por educar indivíduos em diversas tecnologias, seja em ambientes acadêmicos ou corporativos. Desenvolvem materiais didáticos, conduzem aulas e workshops, e avaliam o progresso dos alunos. Este cargo requer não apenas um sólido conhecimento técnico, mas também a capacidade de apresentar informações complexas de maneira clara e envolvente. A natureza comunicativa e entusiasta do perfil Influente é ideal para motivar os alunos e facilitar um ambiente de aprendizado eficaz.
+                                        </li>
+                                    </ul>
+                                    
+                                    
+                                    {% elif perfil_mais_alto == 'Estabilidade' %}
+                                        <p>Cargos mais suscetíveis para o perfil de estabilidade:</p>
+                                        <ul style="list-style-type: none; padding: 0;">
+                                            <li style="margin-bottom: 10px; text-align: justify;">
+                                                <strong>Desenvolvedor de Sistemas:</strong> Responsáveis pela criação e manutenção de sistemas de software, os Desenvolvedores de Sistemas precisam de uma abordagem sistemática e atenção aos detalhes. Eles devem ser capazes de trabalhar de maneira consistente e confiável. O perfil Estável se adapta bem a este papel, oferecendo a paciência e a meticulosidade necessárias.</li>
+                                            <li style="margin-bottom: 10px; text-align: justify;">
+                                                <strong>Analista de Suporte:</strong> Analistas de Suporte fornecem assistência técnica e resolvem problemas de sistemas de TI. Este cargo requer paciência, habilidades de resolução de problemas e a capacidade de trabalhar sob pressão. O perfil Estável é ideal para esta função, pois traz calma, empatia e uma abordagem metódica para o suporte técnico.</li>
+                                            <li style="margin-bottom: 10px; text-align: justify;">
+                                                <strong>Analista de Segurança da Informação:</strong> Especializados na proteção de sistemas de informação contra ameaças, os Analistas de Segurança da Informação precisam ser meticulosos e proativos na prevenção de riscos. O perfil Estável, com sua natureza cuidadosa e focada, é ideal para garantir a segurança e a integridade dos dados.</li>
+                                        </ul>
+                                    {% elif perfil_mais_alto == 'Conformado' %}
+                                        <p>Cargos mais suscetíveis para o perfil conformado:</p>
+                                        <ul style="list-style-type: none; padding: 0;">
+                                            <li style="margin-bottom: 10px; text-align: justify;">
+                                                <strong>Engenheiro de Software: </strong> Engenheiros de Software projetam e desenvolvem sistemas de software complexos. Eles precisam de habilidades de planejamento e execução precisas. O perfil Cauteloso se encaixa bem neste papel, trazendo uma abordagem disciplinada e minuciosa para a engenharia de software. Eles são responsáveis por analisar requisitos, criar arquiteturas de software, escrever código limpo e eficiente, realizar testes e depurar problemas. Além disso, colaboram com equipes multidisciplinares, participam de revisões de código e mantêm-se atualizados com as tendências e tecnologias mais recentes. A atenção aos detalhes e a busca pela excelência são características essenciais para o sucesso como Engenheiro de Software.
+                                            <li style="margin-bottom: 10px; text-align: justify;">
+                                                <strong>Cientista de Dados:</strong> Cientistas de Dados usam métodos estatísticos e de machine learning para extrair conhecimentos valiosos de conjuntos de dados complexos. Eles aplicam técnicas avançadas de análise e modelagem para identificar padrões, tendências e insights que podem impulsionar a tomada de decisões estratégicas nas organizações. O perfil Cauteloso é perfeito para este papel, pois traz a precisão, a disciplina e a atenção aos detalhes necessárias para a ciência de dados.</li>
+                                            <li style="margin-bottom: 10px; text-align: justify;">
+                                                <strong>Analista de Qualidade de Software (QA Analyst): </strong> O Analista de Qualidade de Software (QA Analyst) é um profissional meticuloso, focado em assegurar que os produtos de software cumpram os mais altos padrões de qualidade antes de seu lançamento. Este cargo exige uma abordagem detalhada e sistemática para o desenvolvimento e execução de testes, identificação de bugs e problemas de usabilidade, e uma colaboração próxima com as equipes de desenvolvimento para implementar as soluções necessárias. Com habilidades técnicas para compreender as especificações do software e sugerir melhorias, o perfil Cauteloso é perfeito para esta função, combinando disciplina, meticulosidade e uma forte tendência para a precisão e cautela, garantindo assim a entrega de produtos de alta qualidade e a satisfação do cliente.</li>
+                                        </ul>
+                                    {% else %}
+                                    <p>Você ainda não fez o teste.</p>
+                                {% endif %}
+                            </div>
+
+                         <!-- Condição para exibir o botão de acordo com o perfil mais alto -->
                             {% if perfil_mais_alto == 'Dominante' %}
                                 <a href="{% url 'core:perfil_dominante' %}" class="btn btn-dark">
                                     Leia mais sobre seu perfil
@@ -47,7 +103,7 @@
                                     Leia mais sobre seu perfil
                                 </a>
                             {% elif perfil_mais_alto == 'Estabilidade' %}
-                                <a href="{% url 'core:perfil_estabilidade' %}" class="btn btn-dark">
+                                <a href="{% url 'core:perfil_estavel' %}" class="btn btn-dark">
                                     Leia mais sobre seu perfil
                                 </a><br>
                             {% elif perfil_mais_alto == 'Conformado' %}
@@ -75,5 +131,14 @@
             {% endif %}
         </div>
     </div>
+        <!-- Adicionar links "Leia mais" -->
+        <div class="text-center mt-5">
+            <p>Todos os perfis:</p>
+            <a href="{% url 'core:perfil_dominante' %}" class="btn btn-link">Dominante</a>
+            <a href="{% url 'core:perfil_influente' %}" class="btn btn-link">Influente</a>
+            <a href="{% url 'core:perfil_estavel' %}" class="btn btn-link">Estável</a>
+            <a href="{% url 'core:perfil_cauteloso' %}" class="btn btn-link">Conformado</a>
+        </div>
+
 </section>
 {% endblock %}

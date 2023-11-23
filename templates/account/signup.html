@@ -6,12 +6,13 @@
                 <div class="text-center mb-5">
                     <div class="feature bg-primary bg-gradient text-white rounded-5 mb-3"><i class="bi-clipboard bi-sm"></i></div>
                     <h1 class="fw-bolder">Faça o Seu Cadastro
-                    <p class="lead fw-normal text-muted mb-0">Insira seus Dados</p>
+                    <p class="lead fw-normal text-muted mb-0">Insira seus Dados (Preencha todos Campos)</p>
                             </div>
                             <div class="row gx-5 justify-content-center">
                                 <div class="col-lg-8 col-xl-6">
                                 <form method="post" class="signup-form">
                                     {% csrf_token %}
+                                    
                                     <div class="mb-3 form-floating">
                                         <input type="text" class="form-control" id="{{ form.username.id_for_label }}" placeholder="Nome de Usuário" name="{{ form.username.name }}" required>
                                         <label for="{{ form.username.id_for_label }}">Nome de Usuário</label>
