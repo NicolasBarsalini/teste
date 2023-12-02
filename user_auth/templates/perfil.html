@@ -11,8 +11,7 @@
                     <i class="bi bi-person-badge"></i>
                 </div>
                 <h1 class="fw-bolder">Seu Perfil DISC</h1>
-                <p class="lead fw-normal text-muted mb-0">.</p>
-            </div>
+                <p class="lead fw-normal text-muted mb-0">{{ user.first_name }} {{ user.last_name }}</p><br>
             {% if resultado_disc %}
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-6">
