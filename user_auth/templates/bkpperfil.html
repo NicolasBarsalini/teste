@@ -1,3 +1,5 @@
+<!-- FILEPATH: /c:/Users/gonca/Desktop/Danielle/TCC/TCC_oficial/disc_assessment/disc/templates/resultado_disc.html -->
+
 {% extends 'base.html' %}
 
 {% block title %}Resultados DISC{% endblock %}
@@ -22,47 +24,41 @@
                             <i class="bi bi-graph-up text-primary"></i> Médias por perfil
                         </h2>
                         <ul class="list-unstyled">
-                            <li><i class="bi bi-person text-primary"></i> Dominante: {{ resultado_disc.dominante }}</li>
-                            <li><i class="bi bi-person text-primary"></i> Influente: {{ resultado_disc.influente }}</li>
-                            <li><i class="bi bi-person text-primary"></i> Estabilidade: {{ resultado_disc.estabilidade }}</li>
-                            <li><i class="bi bi-person text-primary"></i> Conformado: {{ resultado_disc.conformado }}</li>
+                            <li><i class="bi bi-person text-primary"></i> Dominante: {{ object.dominante }}</li>
+                            <li><i class="bi bi-person text-primary"></i> Influente: {{ object.influente }}</li>
+                            <li><i class="bi bi-person text-primary"></i> Estabilidade: {{ object.estabilidade }}</li>
+                            <li><i class="bi bi-person text-primary"></i> Conformado: {{ object.conformado }}</li>
                         </ul>
-                        <h3><i class="bi bi-person-check text-primary"></i> Seu perfil mais alto: {{ perfil_mais_alto }}</h3>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6 mb-5">
-                            <div class="py-4 px-4 px-md-5">
-                                <img src="{% static 'images/foto.png' %}" class="img-fluid rounded-3 mb-4" alt="Locais trabalho" width="250" height="250">
-                               
-                                <h3><i class="bi bi-info-circle text-primary"></i> Descrição</h3>
-                                <p>{{ descricao_perfil }}</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-5">
-                            <div class="py-4 px-4 px-md-5">
-                                <img src="{% static 'images/eng.png' %}" class="img-fluid rounded-3 mb-4" alt="Locais trabalho" width="250" height="250">
-                                <h3><i class="bi bi-geo-alt text-primary text-justify-content-center"></i> Locais de trabalho ideais</h3>
-                                <p>{{ locais_trabalho }}</p>
-                            </div>
-                        </div>
+                    <div class="bg-light rounded-3 py-4 px-0 px-md-0 mb-4">
+                        <h2>
+                            <i class="bi bi-person-check text-primary"></i> Seu perfil mais alto: {{ perfil_mais_alto }}
+                        </h2>
+                        <br><br>
+                        <h3><i class="bi bi-info-circle text-primary"></i> Descrição</h3>
+                        <p>{{ descricao_perfil }}</p>
                     </div>
+                    <div class="bg-light rounded-3 py-4 px-0 px-md-0 mb-4">
+                        <h3>
+                            <i class="bi bi-geo-alt text-primary"></i> Locais de trabalho ideais
+                        </h3>
+                        <p>{{ locais_trabalho }}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-<section class="py-0">
+<section class="py-5">
     <div class="container">
         <div class="row">
             <div class="col">
                 <div class="card mb-4">
                     <div class="card-body bg-light">
-                        <div class="text-center">
-                            <img class="card-img-top" src="{% static 'images/5-img-perfil.png' %}" alt="Imagem de capa do card" style="max-width: 800px; max-height: 800px;">
-                        </div>
-                        <div class="mt-4">
-                            <h3 class="card-title">
-                                <i class="bi bi-info-circle text-primary text-center:"></i> Cargos mais suscetíveis na área de T.I.
-                            </h3>
-                        </div>
+                        <img class="card-img-top" src="{% static 'images/card-img-perfil-html.png' %}" alt="Imagem de capa do card">
+                        <h3 class="card-title">
+                            <i class="bi bi-info-circle text-primary text-center:"></i> Cargos mais suscetíveis na área de T.I.
+                        </h3>
                         {% if perfil_mais_alto == 'Dominante' %}
                         <p>Cargos mais suscetíveis para o perfil dominante:</p>
                         <ul style="list-style-type: none; padding: 0;">
@@ -135,23 +131,10 @@
                     </div>
                 </div>
 
-                    <!-- Botões alinhados à esquerda e à direita no rodapé do cartão -->
-                    <div class="card-footer">
-                        <div class="d-flex justify-content-between">
-                            <a href="{% url 'core:index' %}" class="btn btn-primary" style="color: white;">
-                                Retornar a página inicial <i class="bi bi-arrow-right"></i>
-                            </a>
-                            <a href="{% url 'disc:teste_disc' %}" class="btn btn-danger" style="color: white;">
-                                Fazer/Refazer o Teste DISC <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Botão 'Deslogar' centralizado abaixo do cartão -->
-                <div class="text-center mt-4">
-                    <a href="{% url 'account_logout' %}" class="btn btn-warning" style="color: white;">
-                        Deslogar <i class="bi bi-arrow-right"></i>
+                <!-- Link para voltar ao perfil do usuário -->
+                <div class="text-center mt-5">
+                    <a href="{% url 'core:index' %}" class="btn btn-primary mt-3">
+                        Retornar ao página inicial <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
 
@@ -164,5 +147,4 @@
                 </div>
             </div>
 </section>
-
 {% endblock %}

@@ -5,6 +5,7 @@ from disc.models import Pergunta, ResultadoDISC
 from .forms import QuestionnaireForm
 from django.views.generic import DetailView
 from django.http import JsonResponse
+from django.db.models import Sum
 
 
 """def form_valid(self, form):
@@ -101,11 +102,29 @@ class ResultadoView(DetailView):
 
 def estatisticas_disc(request):
     # Buscar todos os resultados dos testes DISC
-    resultados = ResultadoDISC.objects.all()
+        # Filtra os resultados do DISC que têm um usuário associado
+    resultados = ResultadoDISC.objects.filter(user__isnull=False)
+    
 
     # Inicializar contadores para cada perfil
     contagem_perfis = {'d': 0, 'i': 0, 's': 0, 'c': 0}
+    
+    # Calcular os totais para cada perfil e o total de usuários
+    total_usuarios = resultados.count()
+    total_d = resultados.aggregate(Sum('dominante'))['dominante__sum']
+    total_i = resultados.aggregate(Sum('influente'))['influente__sum']
+    total_s = resultados.aggregate(Sum('estabilidade'))['estabilidade__sum']
+    total_c = resultados.aggregate(Sum('conformado'))['conformado__sum']
 
+    data = {
+        'total_usuarios': total_usuarios,
+        'd': total_d,
+        'i': total_i,
+        's': total_s,
+        'c': total_c
+    }
+    
+    
     # Contar o perfil mais alto de cada resultado
     for resultado in resultados:
         perfil_mais_alto = resultado.perfil_mais_alto
